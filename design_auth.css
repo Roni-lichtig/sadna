@@ -45,27 +45,46 @@ body {
     font-size: 0.9rem;
 }
 
+/* יישור והגדרת רוחב אחיד לכפתורי הטאבים */
 .auth-tabs {
-    background: #d9e7ff;
-    padding: 4px;
-    border-radius: 999px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    padding: 0;
+}
+
+.auth-tabs .nav-item {
+    width: 50%;
 }
 
 .auth-tabs .nav-link {
+    width: 100%;
+    text-align: center;
+    background: #d9e7ff;
     border-radius: 999px;
     color: #1b3b6d;
     font-weight: 600;
-    font-size: 0.85rem;
-    padding: 8px 20px;
+    font-size: 0.95rem;
+    padding: 10px 0;
     border: none;
+    transition: 0.2s ease;
 }
 
+/* טאבים נבחרים */
 .auth-tabs .nav-link.active {
     background: #4fa3f7;
-    color: #fff;
+    color: #ffffff;
 }
+
+/* גובה קבוע לטופס */
+.tab-content {
+    min-height: 290px;
+    display: flex;
+    align-items: center;
+}
+
 
 label {
     font-size: 0.85rem;
