@@ -8,16 +8,16 @@ body {
     font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* רקע B – צבעוני / gradient מלא */
 .auth-page {
     min-height: 100vh;
     width: 100%;
-    background: radial-gradient(circle at top left, #7fc4ff 0, #4fa3f7 25%, #1f3d73 70%, #0b1533 100%);
+    background: #F2F6FA;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px;
 }
+
 
 /* תוכן מרכזי – שתי עמודות בדסקטופ, אחת במובייל */
 .auth-content {
