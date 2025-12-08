@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoNet - התחברות / הרשמה</title>
+    <title>CoNet – התחברות / הרשמה</title>
 
     <!-- Bootstrap -->
     <link
@@ -11,74 +11,177 @@
         rel="stylesheet"
     >
 
-    <!-- External CSS -->
+    <!-- Google Font (לכותרות מודרניות) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS חיצוני בלבד -->
     <link rel="stylesheet" href="auth.css">
 </head>
-
 <body>
-    <div class="auth-container">
-        <!-- Logo -->
-        <div class="logo">
-            <img src="logo.png" alt="CoNet logo">
-        </div>
 
-        <!-- Tabs -->
-        <ul class="nav nav-tabs justify-content-center mb-4" id="authTabs" role="tablist">
-            <li class="nav-item">
-                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button">
-                    התחברות
-                </button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button">
-                    הרשמה
-                </button>
-            </li>
-        </ul>
+    <div class="auth-page">
+        <div class="auth-content">
+            <!-- אזור טקסט שיווקי / ברכה -->
+            <section class="auth-intro d-none d-lg-block">
+                <div class="auth-intro-inner">
+                    <div class="auth-logo">
+                        <!-- עדכני את הנתיב לפי הקובץ שלך -->
+                        <img src="logo.jpg" alt="CoNet logo">
+                    </div>
+                    <h1>CoNet</h1>
+                    <p>
+                        מתחברים לקהילה, מוצאים מרחב, עובדים ולומדים יחד.
+                        <br>
+                        חוויה טכנולוגית, נגישה וקלילה.
+                    </p>
+                </div>
+            </section>
 
-        <!-- Content -->
-        <div class="tab-content">
-            <!-- Login -->
-            <div class="tab-pane fade show active" id="login">
-                <form id="loginForm">
-                    <div class="mb-3">
-                        <label class="form-label">אימייל</label>
-                        <input type="email" class="form-control" required>
+            <!-- כרטיס ההתחברות / הרשמה -->
+            <section class="auth-card">
+                <div class="auth-card-inner">
+                    <div class="auth-logo-mobile d-lg-none mb-3">
+                        <img src="images/logo-conet.png" alt="CoNet logo">
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">סיסמה</label>
-                        <input type="password" class="form-control" required>
+                    <h2 class="auth-title">ברוכה הבאה 👋</h2>
+                    <p class="auth-subtitle">היכנסי לחשבון שלך או צרי אחד חדש בדקות.</p>
+
+                    <!-- טאבים: התחברות / הרשמה -->
+                    <ul class="nav nav-pills auth-tabs mb-4" id="authTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="nav-link active"
+                                id="login-tab"
+                                data-bs-toggle="pill"
+                                data-bs-target="#login"
+                                type="button"
+                                role="tab"
+                            >
+                                התחברות
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="nav-link"
+                                id="signup-tab"
+                                data-bs-toggle="pill"
+                                data-bs-target="#signup"
+                                type="button"
+                                role="tab"
+                            >
+                                הרשמה
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <!-- טופס התחברות -->
+                        <div class="tab-pane fade show active" id="login" role="tabpanel">
+                            <form id="loginForm" novalidate>
+                                <div class="mb-3">
+                                    <label class="form-label" for="loginEmail">אימייל</label>
+                                    <input
+                                        type="email"
+                                        id="loginEmail"
+                                        class="form-control"
+                                        placeholder="name@example.com"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="loginPassword">סיסמה</label>
+                                    <input
+                                        type="password"
+                                        id="loginPassword"
+                                        class="form-control"
+                                        placeholder="••••••••"
+                                        required
+                                    >
+                                </div>
+
+                                <button
+                                    class="btn btn-primary auth-btn w-100 mt-2"
+                                    type="submit"
+                                >
+                                    התחברות
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- טופס הרשמה -->
+                        <div class="tab-pane fade" id="signup" role="tabpanel">
+                            <form id="signupForm" novalidate>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label" for="firstName">שם פרטי</label>
+                                        <input
+                                            type="text"
+                                            id="firstName"
+                                            class="form-control"
+                                            placeholder="לדוגמה: רוני"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label class="form-label" for="lastName">שם משפחה</label>
+                                        <input
+                                            type="text"
+                                            id="lastName"
+                                            class="form-control"
+                                            placeholder="לדוגמה: ליכטיג"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="signupEmail">אימייל</label>
+                                    <input
+                                        type="email"
+                                        id="signupEmail"
+                                        class="form-control"
+                                        placeholder="name@example.com"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="signupPassword">סיסמה</label>
+                                    <input
+                                        type="password"
+                                        id="signupPassword"
+                                        class="form-control"
+                                        placeholder="בחרי סיסמה חזקה"
+                                        required
+                                    >
+                                </div>
+
+                                <button
+                                    class="btn btn-primary auth-btn w-100 mt-2"
+                                    type="submit"
+                                >
+                                    יצירת חשבון חדש
+                                </button>
+                            </form>
+                        </div>
                     </div>
 
-                    <button class="btn btn-primary w-100" type="submit">התחברות</button>
-                </form>
-            </div>
-
-            <!-- Signup -->
-            <div class="tab-pane fade" id="signup">
-                <form id="signupForm">
-                    <div class="mb-3">
-                        <label class="form-label">שם מלא</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">אימייל</label>
-                        <input type="email" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">סיסמה</label>
-                        <input type="password" class="form-control" required>
-                    </div>
-
-                    <button class="btn btn-primary w-100" type="submit">הירשמי עכשיו</button>
-                </form>
-            </div>
+                </div>
+            </section>
         </div>
     </div>
-    <script src="auth.js"></script>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- כאן בעתיד נוסיף auth.js (ולידציה + קריאה ל-API + פופ-אפ שגיאה) -->
+    <!-- <script src="auth.js"></script> -->
 </body>
 </html>
