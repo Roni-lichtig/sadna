@@ -136,4 +136,27 @@ label {
     .auth-card {
         max-width: 90%;
     }
+
+    /* שאר העיצוב הקודם שלך נמצא מעל */
+
+/* תוספת — דריסה מדויקת */
+.auth-card {
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 16px;
+}
+
+.tab-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
 }
