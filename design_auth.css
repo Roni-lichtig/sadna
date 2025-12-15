@@ -1,4 +1,4 @@
-/* בסיס */
+/* ===== בסיס ===== */
 * {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
@@ -8,39 +8,28 @@ body {
     margin: 0;
 }
 
-/* מעטפת כללית */
+/* ===== AUTH (login / signup) ===== */
 .auth-wrapper {
     min-height: 100vh;
     padding: 24px;
     background: #E8F2FE;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-/* לוגו */
-.auth-logo-top img {
-    width: 130px;
-    margin-bottom: 20px;
-}
-
-/* כרטיס */
 .auth-card {
     width: 100%;
     max-width: 400px;
-    min-height: 580px; /* גובה אחיד לשני המצבים */
+    min-height: 580px;
     background: #ffffff;
     border-radius: 18px;
     padding: 30px 25px;
     box-shadow: 0 8px 26px rgba(0,0,0,0.10);
-    text-align: center;
-
     display: flex;
     flex-direction: column;
 }
 
-/* כותרות */
 .auth-heading {
     font-weight: 700;
     font-size: 1.6rem;
@@ -54,48 +43,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* טאבים (כמוסה) */
-.auth-tabs {
-    background: #D9E7FF;
-    width: fit-content;
-    margin: 0 auto 24px;
-    padding: 6px;
-    border-radius: 999px;
-    display: flex;
-    gap: 6px;
-}
-
-.auth-tabs .nav-link {
-    min-width: 120px;
-    padding: 10px 0;
-    border-radius: 999px;
-    background: transparent;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #1B3B6D;
-    border: none;
-    transition: 0.2s ease-in-out;
-}
-
-.auth-tabs .nav-link.active {
-    background: #4FA3F7;
-    color: #ffffff;
-    box-shadow: 0 4px 8px rgba(79,163,247,0.25);
-}
-
-/* אזור הטפסים – זה החלק החשוב */
-.tab-content {
-    flex: 1;                 /* ממלא את הכרטיס */
-    min-height: 260px;       /* אותו גובה Login / Signup */
-    display: flex;
-    align-items: center;     /* מרכז אנכית */
-}
-
-.tab-pane {
-    width: 100%;
-}
-
-/* תוויות */
+/* שדות */
 label {
     font-size: 0.85rem;
     font-weight: 600;
@@ -105,18 +53,10 @@ label {
     color: #333;
 }
 
-/* שדות קלט */
 .form-control {
     border-radius: 999px;
     border: 1px solid #ccd7e0;
-    background: #ffffff;
-    color: #222;
     padding: 10px 14px;
-    font-size: 0.95rem;
-}
-
-.form-control::placeholder {
-    color: #7a7a7a;
 }
 
 .form-control:focus {
@@ -124,49 +64,34 @@ label {
     box-shadow: 0 0 6px rgba(79,163,247,0.4);
 }
 
-/* כפתור */
 .auth-btn {
+    margin-top: auto;
     background: #4fa3f7;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 600;
+    color: #fff;
     padding: 12px 0;
     border-radius: 999px;
     border: none;
-    margin-top: 6px;
 }
 
-.auth-btn:hover {
-    background: #3a8ddb;
-    transform: translateY(-2px);
-    transition: all 0.15s ease;
+/* ===== BOOKING ===== */
+.page-wrapper {
+    min-height: 100vh;
+    padding: 40px 16px;
+    background: #E8F2FE;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
-.booking-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-/* מובייל */
-@media (max-width: 500px) {
-    .auth-card {
-        max-width: 90%;
-    }
-    /* =========================
-   Booking page only
-   ========================= */
 
 .booking-container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
 }
 
 .booking-flex {
     display: flex;
     gap: 32px;
     justify-content: center;
-    align-items: stretch;
 }
 
 .booking-col {
@@ -185,6 +110,7 @@ label {
     margin-top: auto;
 }
 
+/* מובייל */
 @media (max-width: 768px) {
     .booking-flex {
         flex-direction: column;
@@ -194,15 +120,4 @@ label {
     .booking-col {
         max-width: 100%;
     }
-}
-/* Wrapper כללי לעמודים שאינם auth */
-.page-wrapper {
-    min-height: 100vh;
-    padding: 32px 16px;
-    background: #E8F2FE;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* חשוב */
-}
-
 }
