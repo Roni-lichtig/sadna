@@ -17,13 +17,12 @@
         rel="stylesheet"
     >
 
-    <!-- CSS משותף -->
     <link rel="stylesheet" href="design_auth.css">
 </head>
 
 <body>
 
-<div class="auth-wrapper">
+<div class="page-wrapper">
 
     <div class="booking-container">
 
@@ -37,7 +36,6 @@
                     <p class="auth-subtext">בחרי את פרטי ההזמנה</p>
 
                     <form>
-
                         <div class="mb-3">
                             <label>תאריך</label>
                             <input type="date" class="form-control">
@@ -59,7 +57,6 @@
                             <input type="number" class="form-control" min="1">
                         </div>
 
-                        <!-- למנהל קהילה בלבד -->
                         <div class="community-only mb-3">
                             <label>סוג פעילות קהילתית</label>
                             <select class="form-control">
@@ -78,28 +75,24 @@
                         <button type="submit" class="auth-btn w-100">
                             שליחת בקשה
                         </button>
-
                     </form>
 
                 </div>
             </div>
 
-            <!-- כרטיס מידע על המרחב -->
+            <!-- מידע על המרחב -->
             <div class="booking-col">
                 <div class="auth-card text-end">
 
                     <h3 class="auth-heading">שם המרחב</h3>
                     <p class="auth-subtext">תל אביב · מרכז העיר</p>
 
-                    <div class="mb-3">
-                        <strong>מתקנים:</strong>
-                        <ul class="mt-2">
-                            <li>Wi-Fi</li>
-                            <li>מסך</li>
-                            <li>מטבחון</li>
-                            <li>נגישות מלאה</li>
-                        </ul>
-                    </div>
+                    <ul class="mt-3">
+                        <li>Wi-Fi</li>
+                        <li>מסך</li>
+                        <li>מטבחון</li>
+                        <li>נגישות מלאה</li>
+                    </ul>
 
                     <img
                         src="https://via.placeholder.com/400x220"
