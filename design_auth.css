@@ -1,5 +1,6 @@
+/* בסיס */
 * {
-    font-family: 'calibri', sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
@@ -7,8 +8,9 @@ body {
     margin: 0;
 }
 
+/* מעטפת כללית */
 .auth-wrapper {
-    min-height: 500vh;
+    min-height: 100vh;
     padding: 24px;
     background: #E8F2FE;
     display: flex;
@@ -17,21 +19,28 @@ body {
     justify-content: center;
 }
 
+/* לוגו */
 .auth-logo-top img {
     width: 130px;
     margin-bottom: 20px;
 }
 
+/* כרטיס */
 .auth-card {
     width: 100%;
     max-width: 400px;
-    background: #fff;
+    min-height: 580px; /* גובה אחיד לשני המצבים */
+    background: #ffffff;
     border-radius: 18px;
     padding: 30px 25px;
     box-shadow: 0 8px 26px rgba(0,0,0,0.10);
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
 }
 
+/* כותרות */
 .auth-heading {
     font-weight: 700;
     font-size: 1.6rem;
@@ -45,23 +54,21 @@ body {
     font-size: 0.9rem;
 }
 
-/* טאבים בסגנון כמוסה צבעונית */
+/* טאבים (כמוסה) */
 .auth-tabs {
     background: #D9E7FF;
     width: fit-content;
-    margin: 0 auto 24px auto;
+    margin: 0 auto 24px;
     padding: 6px;
     border-radius: 999px;
     display: flex;
-    justify-content: center;
     gap: 6px;
 }
 
 .auth-tabs .nav-link {
-    min-width: 120px; /* רוחב אחיד ונקי */
-    text-align: center;
-    border-radius: 999px;
+    min-width: 120px;
     padding: 10px 0;
+    border-radius: 999px;
     background: transparent;
     font-size: 0.95rem;
     font-weight: 600;
@@ -72,18 +79,23 @@ body {
 
 .auth-tabs .nav-link.active {
     background: #4FA3F7;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 4px 8px rgba(79,163,247,0.25);
 }
 
-/* גובה קבוע לטופס */
+/* אזור הטפסים – זה החלק החשוב */
 .tab-content {
-    min-height: 290px;
+    flex: 1;                 /* ממלא את הכרטיס */
+    min-height: 260px;       /* אותו גובה Login / Signup */
     display: flex;
-    align-items: center;
+    align-items: center;     /* מרכז אנכית */
 }
 
+.tab-pane {
+    width: 100%;
+}
 
+/* תוויות */
 label {
     font-size: 0.85rem;
     font-weight: 600;
@@ -93,6 +105,7 @@ label {
     color: #333;
 }
 
+/* שדות קלט */
 .form-control {
     border-radius: 999px;
     border: 1px solid #ccd7e0;
@@ -111,9 +124,10 @@ label {
     box-shadow: 0 0 6px rgba(79,163,247,0.4);
 }
 
+/* כפתור */
 .auth-btn {
     background: #4fa3f7;
-    color: #fff;
+    color: #ffffff;
     font-size: 1rem;
     font-weight: 600;
     padding: 12px 0;
@@ -125,38 +139,12 @@ label {
 .auth-btn:hover {
     background: #3a8ddb;
     transform: translateY(-2px);
-    transition: all .15s ease;
+    transition: all 0.15s ease;
 }
 
-.tab-content {
-    min-height: 250px;
-}
-
-@media(max-width: 500px) {
+/* מובייל */
+@media (max-width: 500px) {
     .auth-card {
         max-width: 90%;
     }
-
-    /* שאר העיצוב הקודם שלך נמצא מעל */
-
-/* תוספת — דריסה מדויקת */
-.auth-card {
-    min-height: 580px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.auth-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 16px;
-}
-
-.tab-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
 }
