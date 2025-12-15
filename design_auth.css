@@ -103,7 +103,8 @@ label {
 }
 
 .booking-col {
-  display: flex; 
+  display: flex;
+  flex: 1;
 }
 
 /* override ממוקד – רק להזמנה (לא נוגע ב-auth!) */
