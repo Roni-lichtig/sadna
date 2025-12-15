@@ -1,4 +1,6 @@
-/* ===== בסיס ===== */
+/* ==================================================
+   בסיס
+   ================================================== */
 * {
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
@@ -8,9 +10,9 @@ body {
   margin: 0;
 }
 
-/* ==============================
-   AUTH (login / signup)
-   ============================== */
+/* ==================================================
+   AUTH (login / signup בלבד!)
+   ================================================== */
 
 .auth-wrapper {
   min-height: 100vh;
@@ -33,6 +35,7 @@ body {
   flex-direction: column;
 }
 
+/* טיפוגרפיה */
 .auth-heading {
   font-weight: 700;
   font-size: 1.6rem;
@@ -46,6 +49,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* טפסים */
 label {
   font-size: 0.85rem;
   font-weight: 600;
@@ -67,7 +71,7 @@ label {
 }
 
 .auth-btn {
-  margin-top: auto;
+  margin-top: auto; /* חשוב ל-auth */
   background: #4fa3f7;
   color: #fff;
   padding: 12px 0;
@@ -75,29 +79,30 @@ label {
   border: none;
 }
 
-/* ==============================
-   BOOKING (הזמנת מרחב)
-   ============================== */
+/* ==================================================
+   BOOKING / COMMUNITY / PAGES (לא auth!)
+   ================================================== */
 
-/* חשוב: בעמוד הזמנה משתמשים ב-page-wrapper */
 .page-wrapper {
   min-height: 100vh;
-  padding: 64px 32px;    /* מרווח כמו "מוצר" ולא צמוד לקצוות */
-  background: #F4F8FE;   /* רך יותר מה-auth */
+  padding: 64px 32px;
+  background: #F4F8FE;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
+/* קונטיינר מרכזי */
 .booking-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* פריסה של כרטיסים */
 .booking-flex {
   display: flex;
-  gap: 48px;            /* יותר אוויר בין הכרטיסים */
+  gap: 48px;
   justify-content: center;
   align-items: stretch;
 }
@@ -105,15 +110,17 @@ label {
 .booking-col {
   display: flex;
   flex: 1;
+  max-width: 520px;
 }
 
-/* override ממוקד – רק להזמנה (לא נוגע ב-auth!) */
-.booking-col .auth-card {
+/* ===== override ממוקד – רק בעמודים שאינם auth ===== */
+.page-wrapper .auth-card {
   max-width: 100%;
   height: 100%;
-  justify-content: space-between;
+  justify-content: space-between; /* מותר כאן */
 }
 
+/* אלמנטים פנימיים */
 .booking-row {
   display: flex;
   gap: 12px;
@@ -125,7 +132,10 @@ label {
   margin-top: auto;
 }
 
-/* מובייל */
+/* ==================================================
+   רספונסיביות
+   ================================================== */
+
 @media (max-width: 768px) {
   .page-wrapper {
     padding: 40px 16px;
