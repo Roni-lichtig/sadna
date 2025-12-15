@@ -1,139 +1,141 @@
 /* ===== בסיס ===== */
 * {
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
-/* ==================================================
-   AUTH (login / signup) – נשאר בדיוק כמו המקור
-   ================================================== */
+/* ==============================
+   AUTH (login / signup)
+   ============================== */
 
 .auth-wrapper {
-    min-height: 100vh;
-    padding: 24px;
-    background: #E8F2FE;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+  background: #E8F2FE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .auth-card {
-    width: 100%;
-    max-width: 400px;
-    min-height: 580px;
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 30px 25px;
-    box-shadow: 0 8px 26px rgba(0,0,0,0.10);
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  min-height: 580px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
 }
 
 .auth-heading {
-    font-weight: 700;
-    font-size: 1.6rem;
-    margin-bottom: 4px;
-    color: #222;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+  color: #222;
 }
 
 .auth-subtext {
-    margin-bottom: 24px;
-    color: #555;
-    font-size: 0.9rem;
+  margin-bottom: 24px;
+  color: #555;
+  font-size: 0.9rem;
 }
 
-/* שדות */
 label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-    display: block;
-    text-align: right;
-    color: #333;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+  text-align: right;
+  color: #333;
 }
 
 .form-control {
-    border-radius: 999px;
-    border: 1px solid #ccd7e0;
-    padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid #ccd7e0;
+  padding: 10px 14px;
 }
 
 .form-control:focus {
-    border-color: #4fa3f7;
-    box-shadow: 0 0 6px rgba(79,163,247,0.4);
+  border-color: #4fa3f7;
+  box-shadow: 0 0 6px rgba(79, 163, 247, 0.4);
 }
 
 .auth-btn {
-    margin-top: auto;
-    background: #4fa3f7;
-    color: #fff;
-    padding: 12px 0;
-    border-radius: 999px;
-    border: none;
+  margin-top: auto;
+  background: #4fa3f7;
+  color: #fff;
+  padding: 12px 0;
+  border-radius: 999px;
+  border: none;
 }
 
-/* ==================================================
-   BOOKING (הזמנת מרחב) – הרחבה מבוקרת בלבד
-   ================================================== */
+/* ==============================
+   BOOKING (הזמנת מרחב)
+   ============================== */
 
+/* חשוב: בעמוד הזמנה משתמשים ב-page-wrapper */
 .page-wrapper {
-    min-height: 100vh;
-    padding: 64px 32px;      /* יותר רווח מהקצוות */
-    background: #F4F8FE;     /* כחול רך יותר מה-auth */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  min-height: 100vh;
+  padding: 64px 32px;    /* מרווח כמו "מוצר" ולא צמוד לקצוות */
+  background: #F4F8FE;   /* רך יותר מה-auth */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .booking-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;            /* מרכז כבלוק */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .booking-flex {
-    display: flex;
-    gap: 32px;
-    justify-content: center;   /* מרכז את שני הכרטיסים כיחידה */
-    align-items: stretch;
+  display: flex;
+  gap: 48px;            /* יותר אוויר בין הכרטיסים */
+  justify-content: center;
+  align-items: stretch;
 }
 
 .booking-col {
-    flex: 1;
-    max-width: 520px;
+  flex: 1;
+  max-width: 520px;
 }
 
-/* override ממוקד – רק להזמנה */
+/* override ממוקד – רק להזמנה (לא נוגע ב-auth!) */
 .booking-col .auth-card {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .booking-row {
-    display: flex;
-    gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
 .space-image {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: auto;
+  width: 100%;
+  border-radius: 12px;
+  margin-top: auto;
 }
 
-/* ==================================================
-   רספונסיביות
-   ================================================== */
-
+/* מובייל */
 @media (max-width: 768px) {
-    .booking-flex {
-        flex-direction: column;
-        align-items: center;
-    }
+  .page-wrapper {
+    padding: 40px 16px;
+  }
 
-    .booking-col {
-        max-width: 100%;
-    }
+  .booking-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .booking-col {
+    max-width: 100%;
+  }
 }
