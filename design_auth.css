@@ -141,6 +141,11 @@ label {
     transform: translateY(-2px);
     transition: all 0.15s ease;
 }
+.booking-container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
 
 /* מובייל */
 @media (max-width: 500px) {
