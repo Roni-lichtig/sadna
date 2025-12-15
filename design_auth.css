@@ -120,4 +120,7 @@ label {
     .booking-col {
         max-width: 100%;
     }
+    .booking-col .auth-card {
+    max-width: 100%;
+}
 }
