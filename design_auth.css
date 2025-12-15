@@ -82,11 +82,11 @@ label {
 
 .page-wrapper {
     min-height: 100vh;
-    padding: 40px 16px;
-    background: #E8F2FE;
+    padding: 64px 32px;      /* יותר רווח מהקצוות */
+    background: #F4F8FE;     /* כחול רך יותר מה-auth */
     display: flex;
-    justify-content: center;   /* מרכז אופקית */
-    align-items: flex-start;   /* לא פוגע בעיצוב auth */
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .booking-container {
