@@ -195,5 +195,14 @@ label {
         max-width: 100%;
     }
 }
+/* Wrapper כללי לעמודים שאינם auth */
+.page-wrapper {
+    min-height: 100vh;
+    padding: 32px 16px;
+    background: #E8F2FE;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* חשוב */
+}
 
 }
