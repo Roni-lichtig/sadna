@@ -109,7 +109,7 @@ label {
 
 /* override ממוקד – רק להזמנה (לא נוגע ב-auth!) */
 .booking-col .auth-card {
-  max-width: 100%;
+  max-width: 400%;
 }
 
 .booking-row {
