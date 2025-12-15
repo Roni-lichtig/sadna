@@ -152,4 +152,48 @@ label {
     .auth-card {
         max-width: 90%;
     }
+    /* =========================
+   Booking page only
+   ========================= */
+
+.booking-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.booking-flex {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.booking-col {
+    flex: 1;
+    max-width: 520px;
+}
+
+.booking-row {
+    display: flex;
+    gap: 12px;
+}
+
+.space-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .booking-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .booking-col {
+        max-width: 100%;
+    }
+}
+
 }
