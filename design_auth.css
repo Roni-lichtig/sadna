@@ -74,43 +74,55 @@ label {
 }
 
 /* ===== BOOKING ===== */
+
+/* עטיפה לעמוד הזמנה – לא נוגעת ב-auth */
 .page-wrapper {
     min-height: 100vh;
     padding: 40px 16px;
     background: #E8F2FE;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
+/* זה החלק הקריטי – בלוק אחד ממורכז */
 .booking-container {
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* מרכז את כל התוכן */
 }
 
+/* שני הכרטיסים כיחידה אחת */
 .booking-flex {
     display: flex;
     gap: 32px;
     justify-content: center;
+    align-items: stretch;
+    width: 100%;
 }
 
+/* כל כרטיס */
 .booking-col {
     flex: 1;
     max-width: 520px;
 }
 
+/* שורה לשעות */
 .booking-row {
     display: flex;
     gap: 12px;
 }
 
+/* תמונה */
 .space-image {
     width: 100%;
     border-radius: 12px;
     margin-top: auto;
 }
 
-/* מובייל */
+/* במובייל */
 @media (max-width: 768px) {
     .booking-flex {
         flex-direction: column;
@@ -120,7 +132,4 @@ label {
     .booking-col {
         max-width: 100%;
     }
-    .booking-col .auth-card {
-    max-width: 100%;
-}
 }
