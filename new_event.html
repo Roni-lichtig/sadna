@@ -23,7 +23,8 @@
 
 <body>
 
-<div class="page-wrapper">
+<div class="auth-wrapper">
+  <div class="auth-container">
 
     <div class="auth-card">
 
@@ -46,19 +47,31 @@
             <!-- תאריך -->
             <div class="mb-3">
                 <label>תאריך האירוע</label>
-                <input type="date" class="form-control" required>
+                <input
+                    type="date"
+                    class="form-control"
+                    required
+                >
             </div>
 
             <!-- שעות -->
-            <div class="booking-row mb-3">
+            <div class="d-flex gap-3 mb-3">
                 <div class="flex-fill">
                     <label>שעת התחלה</label>
-                    <input type="time" class="form-control" required>
+                    <input
+                        type="time"
+                        class="form-control"
+                        required
+                    >
                 </div>
 
                 <div class="flex-fill">
                     <label>שעת סיום</label>
-                    <input type="time" class="form-control" required>
+                    <input
+                        type="time"
+                        class="form-control"
+                        required
+                    >
                 </div>
             </div>
 
@@ -75,7 +88,7 @@
             </div>
 
             <!-- כפתור -->
-            <button type="submit" class="auth-btn w-100">
+            <button type="submit" class="auth-btn">
                 יצירת אירוע
             </button>
 
@@ -83,6 +96,7 @@
 
     </div>
 
+  </div>
 </div>
 
 </body>
