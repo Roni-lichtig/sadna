@@ -49,4 +49,140 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     text-align: center;
 
-    display
+    display: flex;
+    flex-direction: column;
+    min-height: 580px;
+}
+
+/* =====================
+   Headings
+===================== */
+.auth-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.auth-subtext {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 26px;
+}
+
+/* =====================
+   Tabs
+===================== */
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    background: #D9E7FF;
+    width: fit-content;
+    margin: 0 auto 28px;
+    padding: 6px;
+    border-radius: 999px;
+}
+
+.auth-tabs .nav-item {
+    width: 120px;
+}
+
+.auth-tabs .nav-link {
+    all: unset;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #1B3B6D;
+}
+
+.auth-tabs .nav-link.active {
+    background: #4FA3F7;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(79,163,247,0.25);
+}
+
+/* =====================
+   Tab Content
+===================== */
+.tab-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.tab-pane {
+    width: 100%;
+}
+
+/* =====================
+   Form Wrapper
+===================== */
+.form-inner {
+    width: 100%;
+}
+
+/* =====================
+   Labels & Inputs
+===================== */
+label {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 999px;
+    border: 1px solid #ccd7e0;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+}
+
+.form-control:focus {
+    border-color: #4FA3F7;
+    box-shadow: 0 0 6px rgba(79,163,247,0.4);
+}
+
+/* spacing login */
+#login form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* =====================
+   Button
+===================== */
+.auth-btn {
+    display: block;
+    width: 85%;
+    margin: 28px auto 0;
+    padding: 12px 0;
+    background: #4FA3F7;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-btn:hover {
+    background: #3A8DDB;
+}
+
+/* =====================
+   Mobile
+===================== */
+@media (max-width: 500px) {
+    .auth-card {
+        min-height: 620px;
+        padding: 28px 22px 32px;
+    }
+}
