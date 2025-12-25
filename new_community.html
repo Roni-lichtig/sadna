@@ -23,7 +23,9 @@
 
 <body>
 
-  <div class="auth-wrapper">
+<div class="auth-wrapper">
+  <div class="auth-container">
+
     <div class="auth-card">
 
       <h3 class="auth-heading">הוספת קהילה</h3>
@@ -35,7 +37,11 @@
         <!-- תמונת קהילה -->
         <div class="mb-3">
           <label>תמונת קהילה</label>
-          <input type="file" class="form-control" accept="image/*">
+          <input
+            type="file"
+            class="form-control"
+            accept="image/*"
+          />
         </div>
 
         <!-- שם הקהילה -->
@@ -46,7 +52,7 @@
             class="form-control"
             placeholder="לדוגמה: קהילת יזמיות בצפון"
             required
-          >
+          />
         </div>
 
         <!-- משפט קצר -->
@@ -58,23 +64,30 @@
             placeholder="מחברות נשים יזמיות למרחבי עבודה משותפים"
             maxlength="120"
             required
-          >
+          />
         </div>
 
         <!-- תאריך הקמה -->
         <div class="mb-4">
           <label>תאריך הקמת הקהילה</label>
-          <input type="date" class="form-control" required>
+          <input
+            type="date"
+            class="form-control"
+            required
+          />
         </div>
 
-        <button type="submit" class="auth-btn w-100">
+        <!-- כפתור -->
+        <button type="submit" class="auth-btn">
           יצירת קהילה
         </button>
 
       </form>
 
     </div>
+
   </div>
+</div>
 
 </body>
 </html>
