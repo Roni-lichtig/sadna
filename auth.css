@@ -1,179 +1,150 @@
-/* =========================
-   RESET
-========================= */
+/* בסיס */
 * {
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #eef4fb;
-    min-height: 100vh;
 }
 
-/* =========================
-   PAGE LAYOUT
-========================= */
+/* מעטפת כללית */
 .auth-wrapper {
     min-height: 100vh;
+    padding: 24px;
+    background: #E8F2FE;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.auth-container {
-    width: 100%;
-    max-width: 460px;
-    text-align: center;
+/* לוגו */
+.auth-logo-top img {
+    width: 130px;
+    margin-bottom: 20px;
 }
 
-/* =========================
-   LOGO
-========================= */
-.auth-logo img {
-    display: block;
-    margin: 0 auto 28px;
-    max-width: 200px;
-}
-
-/* =========================
-   CARD
-========================= */
+/* כרטיס */
 .auth-card {
-    background: #fff;
-    border-radius: 26px;
-    padding: 36px 32px 40px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 400px;
+    min-height: 580px; /* גובה אחיד לשני המצבים */
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.10);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
 }
 
-/* =========================
-   HEADERS
-========================= */
+/* כותרות */
 .auth-heading {
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+    color: #222;
 }
 
 .auth-subtext {
-    font-size: 0.95rem;
-    color: #6b7280;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+    color: #555;
+    font-size: 0.9rem;
 }
 
-/* =========================
-   TABS – FORCE IDENTICAL
-========================= */
+/* טאבים (כמוסה) */
 .auth-tabs {
+    background: #D9E7FF;
+    width: fit-content;
+    margin: 0 auto 24px;
+    padding: 6px;
+    border-radius: 999px;
     display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 34px;
-    padding: 0;
-    list-style: none;
-}
-
-.auth-tabs .nav-item {
-    width: 140px;
+    gap: 6px;
 }
 
 .auth-tabs .nav-link {
-    all: unset; /* ⬅️ מבטל Bootstrap */
-    display: block;
-    text-align: center;
-    padding: 12px 0;
-    border-radius: 16px;
+    min-width: 120px;
+    padding: 10px 0;
+    border-radius: 999px;
+    background: transparent;
     font-size: 0.95rem;
-    cursor: pointer;
-    background: #e8edff;
-    color: #1e40af;
+    font-weight: 600;
+    color: #1B3B6D;
+    border: none;
+    transition: 0.2s ease-in-out;
 }
 
 .auth-tabs .nav-link.active {
-    background: #2563eb;
-    color: #fff;
+    background: #4FA3F7;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(79,163,247,0.25);
 }
 
-/* =========================
-   TAB CONTENT – FIXED HEIGHT
-========================= */
+/* אזור הטפסים – זה החלק החשוב */
 .tab-content {
-    height: 420px; /* גובה קבוע לשני המצבים */
+    flex: 1;                 /* ממלא את הכרטיס */
+    min-height: 260px;       /* אותו גובה Login / Signup */
     display: flex;
-    align-items: center;
+    align-items: center;     /* מרכז אנכית */
 }
 
-/* Bootstrap cleanup */
 .tab-pane {
     width: 100%;
 }
 
-/* =========================
-   FORM WRAPPER
-========================= */
-.form-inner {
-    width: 100%;
-}
-
-/* =========================
-   FORM
-========================= */
-form {
-    width: 100%;
-    text-align: right;
-}
-
+/* תוויות */
 label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
     display: block;
-    font-size: 0.8rem;
-    margin-bottom: 6px;
+    text-align: right;
+    color: #333;
 }
 
+/* שדות קלט */
 .form-control {
-    width: 100%;
     border-radius: 999px;
-    padding: 14px 18px;
-    font-size: 0.9rem;
+    border: 1px solid #ccd7e0;
+    background: #ffffff;
+    color: #222;
+    padding: 10px 14px;
+    font-size: 0.95rem;
 }
 
-/* spacing login only */
-#login form {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+.form-control::placeholder {
+    color: #7a7a7a;
 }
 
-/* =========================
-   BUTTON – ALWAYS CENTER
-========================= */
+.form-control:focus {
+    border-color: #4fa3f7;
+    box-shadow: 0 0 6px rgba(79,163,247,0.4);
+}
+
+/* כפתור */
 .auth-btn {
-    display: block;
-    width: 85%;
-    margin: 32px auto 0;
-    padding: 14px 0;
-    border-radius: 999px;
-    background: #60a5fa;
-    border: none;
+    background: #4fa3f7;
+    color: #ffffff;
     font-size: 1rem;
-    font-weight: 500;
-    color: #fff;
-    cursor: pointer;
+    font-weight: 600;
+    padding: 12px 0;
+    border-radius: 999px;
+    border: none;
+    margin-top: 6px;
 }
 
 .auth-btn:hover {
-    background: #3b82f6;
+    background: #3a8ddb;
+    transform: translateY(-2px);
+    transition: all 0.15s ease;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 480px) {
+/* מובייל */
+@media (max-width: 500px) {
     .auth-card {
-        padding: 28px 22px 34px;
-    }
-
-    .tab-content {
-        height: 440px;
+        max-width: 90%;
     }
 }
