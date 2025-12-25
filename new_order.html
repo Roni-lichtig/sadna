@@ -18,14 +18,15 @@
     >
 
     <!-- CSS קיים -->
-    <link rel="stylesheet" href="design_auth.css">
+    <link rel="stylesheet" href="auth.css">
 </head>
 
 <body>
 
-<div class="page-wrapper">
+<div class="auth-wrapper">
+  <div class="auth-container">
 
-    <div class="auth-card event-card">
+    <div class="auth-card">
 
         <!-- שם המרחב (דינמי) -->
         <h3 class="auth-heading" id="spaceName">
@@ -52,28 +53,45 @@
             <!-- תאריך התחלה -->
             <div class="mb-3">
                 <label>תאריך התחלה</label>
-                <input type="date" class="form-control" required>
+                <input
+                    type="date"
+                    class="form-control"
+                    required
+                >
             </div>
 
             <!-- שעת התחלה -->
             <div class="mb-3">
                 <label>שעת התחלה</label>
-                <input type="time" class="form-control" required>
+                <input
+                    type="time"
+                    class="form-control"
+                    required
+                >
             </div>
 
             <!-- תאריך סיום -->
             <div class="mb-3">
                 <label>תאריך סיום</label>
-                <input type="date" class="form-control" required>
+                <input
+                    type="date"
+                    class="form-control"
+                    required
+                >
             </div>
 
             <!-- שעת סיום -->
             <div class="mb-4">
                 <label>שעת סיום</label>
-                <input type="time" class="form-control" required>
+                <input
+                    type="time"
+                    class="form-control"
+                    required
+                >
             </div>
 
-            <button type="submit" class="auth-btn w-100">
+            <!-- כפתור -->
+            <button type="submit" class="auth-btn">
                 שליחת בקשת הזמנה
             </button>
 
@@ -81,6 +99,7 @@
 
     </div>
 
+  </div>
 </div>
 
 <script>
