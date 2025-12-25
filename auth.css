@@ -1,110 +1,129 @@
-/* =====================
-   Reset & Base
-===================== */
+/* =========================
+   Base & Reset
+========================= */
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa, #eef1f5);
-    min-height: 100vh;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #eef4fb;
+    min-height: 100vh;
 }
 
-/* =====================
-   Wrapper & Container
-===================== */
+/* =========================
+   Wrapper
+========================= */
 .auth-wrapper {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px;
+    padding: 32px 16px;
 }
 
+/* =========================
+   Container
+========================= */
 .auth-container {
     width: 100%;
-    max-width: 420px;
+    max-width: 460px;
     text-align: center;
 }
 
-/* =====================
+/* =========================
    Logo
-===================== */
+========================= */
 .auth-logo img {
-    max-width: 140px;
-    margin-bottom: 20px;
+    max-width: 190px;
+    margin: 0 auto 28px;
+    display: block;
 }
 
-/* =====================
+/* =========================
    Card
-===================== */
+========================= */
 .auth-card {
     background: #ffffff;
-    border-radius: 18px;
-    padding: 28px 26px 32px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 24px;
+    padding: 32px 28px 36px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
 }
 
-/* =====================
+/* =========================
    Headings
-===================== */
+========================= */
 .auth-heading {
+    font-size: 1.6rem;
     font-weight: 600;
-    font-size: 1.5rem;
     margin-bottom: 6px;
 }
 
 .auth-subtext {
-    font-size: 0.9rem;
-    color: #6c757d;
-    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 28px;
 }
 
-/* =====================
+/* =========================
    Tabs
-===================== */
+========================= */
 .auth-tabs {
+    display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.auth-tabs .nav-item {
+    flex: 1;
+    max-width: 150px;
 }
 
 .auth-tabs .nav-link {
-    border-radius: 999px;
-    padding: 8px 18px;
-    font-size: 0.9rem;
-    color: #555;
-    background: #f1f3f5;
+    width: 100%;
+    border-radius: 16px;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    background: #e8edff;
+    color: #1e40af;
+    border: none;
 }
 
 .auth-tabs .nav-link.active {
-    background: #4f46e5;
+    background: #2563eb;
     color: #ffffff;
 }
 
-/* =====================
-   Tab Content
-   (height locked to signup)
-===================== */
+/* =========================
+   Tab Content (Fixed Height)
+========================= */
 .tab-content {
-    position: relative;
-    min-height: 320px; /* גובה קבוע לפי הרשמה */
-}
-
-/* =====================
-   Inner Form Layout
-===================== */
-.form-inner {
+    min-height: 380px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100%;
 }
 
-/* =====================
+/* =========================
+   Tab Pane
+========================= */
+.tab-pane {
+    width: 100%;
+}
+
+/* =========================
+   Form Wrapper
+========================= */
+.form-inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* =========================
    Forms
-===================== */
+========================= */
 form {
     width: 100%;
     text-align: right;
@@ -112,54 +131,57 @@ form {
 
 label {
     font-size: 0.8rem;
-    margin-bottom: 4px;
-    display: inline-block;
+    margin-bottom: 6px;
+    display: block;
 }
 
 .form-control {
-    border-radius: 10px;
-    padding: 10px 12px;
+    border-radius: 999px;
+    padding: 12px 16px;
     font-size: 0.9rem;
 }
 
-/* ריווח נוסף בהתחברות כדי למלא גובה */
-#login .form-inner form {
+/* ריווח נכון לטופס התחברות */
+#login form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
 }
 
-/* =====================
+/* =========================
    Button
-===================== */
+========================= */
 .auth-btn {
-    background: #4f46e5;
+    width: 85%;
+    margin: 28px auto 0;
+    display: block;
+    background: #60a5fa;
     border: none;
-    color: #fff;
-    padding: 12px;
-    border-radius: 12px;
+    border-radius: 999px;
+    padding: 14px;
+    font-size: 1rem;
     font-weight: 500;
-    font-size: 0.95rem;
-    margin-top: 10px;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .auth-btn:hover {
-    background: #4338ca;
+    background: #3b82f6;
 }
 
-/* =====================
+/* =========================
    Responsive
-===================== */
+========================= */
 @media (max-width: 480px) {
     .auth-card {
-        padding: 24px 20px 28px;
+        padding: 26px 20px 30px;
     }
 
-    .auth-heading {
-        font-size: 1.3rem;
+    .auth-logo img {
+        max-width: 160px;
     }
 
     .tab-content {
-        min-height: 340px;
+        min-height: 400px;
     }
 }
