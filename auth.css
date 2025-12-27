@@ -207,6 +207,23 @@ label {
     box-shadow: 0 10px 20px rgba(37,99,235,0.35);
 }
 
+.auth-switch {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #555;
+}
+
+.auth-switch a {
+  color: #4FA3F7;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
 /* =========================
    MOBILE
 ========================= */
