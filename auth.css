@@ -142,7 +142,7 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – FINAL STRUCTURE (GRID)
+   TOP NAVBAR – FINAL STRUCTURE
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -168,9 +168,7 @@ button:active {
     align-items: center;
 }
 
-/* =========================
-   LOGO – RIGHT
-========================= */
+/* LOGO – RIGHT */
 .conet-logo {
     justify-self: end;
 }
@@ -181,16 +179,15 @@ button:active {
 }
 
 /* =========================
-   NAV – TRUE CENTER (FIXED + LIFTED)
+   NAV – TRUE CENTER (VISUALLY FIXED)
 ========================= */
 .conet-nav-links {
     justify-self: center;
-    align-self: center;
     display: flex;
     gap: 16px;
 
-    /* ✅ הרמה ויזואלית עדינה למרכז הבאנר */
-    transform: translateY(-3px);
+    /* ✅ זה התיקון הסופי */
+    transform: translateY(-7px);
 }
 
 .conet-nav-links a {
@@ -246,7 +243,6 @@ button:active {
     color: var(--text-dark);
 }
 
-/* Login */
 .conet-user button:first-of-type {
     background: var(--primary-blue);
     color: #ffffff;
@@ -256,7 +252,6 @@ button:active {
     font-size: 0.85rem;
 }
 
-/* Logout */
 .conet-logout-btn {
     background: #ffffff;
     border: 1.6px solid #9ca3af;
