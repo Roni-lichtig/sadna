@@ -1,5 +1,154 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
+    padding-top: 72px; /* מותאם לגובה הבאנר */
+}
+
+/* =========================
+   PAGE WRAPPER
+========================= */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* =========================
+   LOGO (AUTH CARD)
+========================= */
+.auth-logo img {
+    display: block;
+    margin: 0 auto 28px;
+    width: 160px;
+    transform: scale(1.4);
+    transform-origin: center;
+    pointer-events: none;
+}
+
+/* =========================
+   CARD
+========================= */
+.auth-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 36px 32px 40px;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.06),
+        0 30px 60px rgba(79,163,247,0.12);
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+}
+
+/* =========================
+   HEADERS
+========================= */
+.auth-heading {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #1f2937;
+}
+
+.auth-subtext {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 32px;
+}
+
+/* =========================
+   FORM
+========================= */
+.form-inner {
+    width: 100%;
+}
+
+label {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 999px;
+    padding: 12px 16px;
+    border: 1px solid #d1d9e6;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+    outline: none;
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+.auth-btn {
+    display: block;
+    width: 85%;
+    margin: 32px auto 0;
+    padding: 14px 0;
+    border-radius: 999px;
+    border: none;
+    background: #2C80FF;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.auth-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(37,99,235,0.35);
+}
+
+/* =========================
+   SWITCH LINK
+========================= */
+.auth-switch {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: #4FA3F7;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
 /* =================================================
-   TOP NAVBAR – CoNet (UPDATED)
+   TOP NAVBAR – CoNet (FINAL & STABLE)
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -8,25 +157,26 @@
     left: 0;
     z-index: 1000;
 
+    height: 72px;
+
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
-/* 🔹 חלוקה ל־3 אזורים מאוזנים */
 .conet-navbar-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 14px 24px;
+    padding: 0 24px;
+
+    height: 100%;
 
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 200px auto 200px;
     align-items: center;
 }
 
-/* =========================
-   LOGO (RIGHT)
-========================= */
+/* RIGHT – LOGO */
 .conet-logo {
     justify-self: end;
     display: flex;
@@ -34,14 +184,12 @@
 }
 
 .conet-logo img {
-    height: 44px;              /* גודל אמיתי */
-    transform: scale(1.45);    /* הגדלה ויזואלית */
-    transform-origin: right center;
+    height: 48px;
+    width: auto;
+    display: block;
 }
 
-/* =========================
-   NAV (CENTER – TRUE CENTER)
-========================= */
+/* CENTER – NAV */
 .conet-nav-links {
     justify-self: center;
     display: flex;
@@ -71,9 +219,7 @@
     width: 100%;
 }
 
-/* =========================
-   USER AREA (LEFT)
-========================= */
+/* LEFT – USER */
 .conet-user {
     justify-self: start;
     display: flex;
@@ -87,10 +233,9 @@
     color: #1f2937;
 }
 
-/* כפתור התנתק – מאוזן ולא משתלט */
 .conet-logout-btn {
     background: #ffffff;
-    border: 1.8px solid #9ca3af;
+    border: 1.6px solid #9ca3af;
     color: #374151;
 
     padding: 6px 12px;
@@ -106,4 +251,14 @@
 .conet-logout-btn:hover {
     border-color: #ef4444;
     color: #ef4444;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 28px 22px 32px;
+        min-height: 620px;
+    }
 }
