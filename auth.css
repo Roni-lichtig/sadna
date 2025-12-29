@@ -17,7 +17,7 @@
 body {
     margin: 0;
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    padding-top: 72px; /* גובה הבאנר */
+    padding-top: 72px;
 }
 
 /* =========================
@@ -49,6 +49,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 600px;
+    gap: 6px;
 }
 
 .auth-heading {
@@ -95,21 +96,10 @@ label {
 ========================= */
 button,
 .auth-btn,
-.conet-logout-btn {
+.conet-user button {
     font-weight: 600;
     cursor: pointer;
     transition: box-shadow 0.2s ease, transform 0.15s ease;
-}
-
-.auth-btn {
-    width: 85%;
-    margin: 32px auto 0;
-    padding: 14px 0;
-    border-radius: 999px;
-    border: none;
-    background: var(--primary-blue);
-    color: #ffffff;
-    font-size: 1rem;
 }
 
 button:hover,
@@ -123,10 +113,24 @@ button:active {
 }
 
 /* =========================
+   FORM CTA
+========================= */
+.auth-btn {
+    width: 100%;
+    margin-top: 36px;
+    padding: 16px 0;
+    border-radius: 999px;
+    border: none;
+    background: var(--primary-blue);
+    color: #ffffff;
+    font-size: 1.05rem;
+}
+
+/* =========================
    SWITCH LINK
 ========================= */
 .auth-switch {
-    margin-top: 16px;
+    margin-top: 18px;
     font-size: 0.85rem;
     text-align: center;
 }
@@ -138,7 +142,7 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – GLOBAL (RTL SAFE)
+   TOP NAVBAR – GLOBAL
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -167,17 +171,17 @@ button:active {
 
 /* LOGO */
 .conet-logo img {
-    height: 48px;
-    display: block;
+    height: 60px;
+    width: auto;
 }
 
-/* NAV LINKS – TEXT STYLES */
+/* NAV LINKS – PILL BUTTONS */
 .conet-nav-links {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 28px;
+    gap: 18px;
 }
 
 .conet-nav-links a {
@@ -185,19 +189,25 @@ button:active {
     font-weight: 600;
     color: var(--text-dark);
     text-decoration: none;
-    padding: 6px 4px;
+
+    padding: 8px 14px;
+    border-radius: 999px;
+
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .conet-nav-links a:hover,
 .conet-nav-links a:focus-visible {
+    background: rgba(44,128,255,0.12);
     color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(44,128,255,0.25);
 }
 
 /* USER AREA */
 .conet-user {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .conet-greeting {
@@ -206,11 +216,22 @@ button:active {
     color: var(--text-dark);
 }
 
+/* Login – primary */
+.conet-user button:first-of-type {
+    background: var(--primary-blue);
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+/* Logout – secondary */
 .conet-logout-btn {
     background: #ffffff;
     border: 1.6px solid #9ca3af;
     color: #374151;
-    padding: 6px 12px;
+    padding: 8px 14px;
     border-radius: 999px;
     font-size: 0.8rem;
 }
@@ -219,9 +240,8 @@ button:active {
    MOBILE
 ================================================= */
 @media (max-width: 768px) {
-
     body {
-        padding-top: 96px; /* הבאנר גבוה יותר במובייל */
+        padding-top: 96px;
     }
 
     .conet-navbar {
@@ -231,7 +251,7 @@ button:active {
     .conet-navbar-inner {
         flex-direction: column;
         justify-content: center;
-        gap: 8px;
+        gap: 10px;
     }
 
     .conet-nav-links {
@@ -239,7 +259,7 @@ button:active {
         transform: none;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
+        gap: 12px;
     }
 
     .conet-user {
@@ -248,13 +268,8 @@ button:active {
 }
 
 @media (max-width: 480px) {
-
     .auth-card {
         padding: 28px 22px 32px;
         min-height: 620px;
-    }
-
-    .auth-btn {
-        width: 100%;
     }
 }
