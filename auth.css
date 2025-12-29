@@ -17,7 +17,7 @@
 body {
     margin: 0;
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    padding-top: 72px;
+    padding-top: 80px; /* תואם לגובה הבאנר */
 }
 
 /* =========================
@@ -142,14 +142,14 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – FINAL STRUCTURE
+   TOP NAVBAR – FINAL, CENTERED & CLEAN
 ================================================= */
 .conet-navbar {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    height: 72px;
+    height: 80px;
     z-index: 1000;
 
     background: rgba(255,255,255,0.95);
@@ -168,6 +168,17 @@ button:active {
     align-items: center;
 }
 
+/* =========================
+   SHARED VERTICAL ALIGN
+========================= */
+.conet-logo,
+.conet-nav-links,
+.conet-user {
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
 /* LOGO – RIGHT */
 .conet-logo {
     justify-self: end;
@@ -179,15 +190,11 @@ button:active {
 }
 
 /* =========================
-   NAV – TRUE CENTER (VISUALLY FIXED)
+   NAV – TRUE CENTER, FIXED WIDTH
 ========================= */
 .conet-nav-links {
     justify-self: center;
-    display: flex;
     gap: 16px;
-
-    /* ✅ זה התיקון הסופי */
-    transform: translateY(-7px);
 }
 
 .conet-nav-links a {
@@ -232,8 +239,6 @@ button:active {
 ========================= */
 .conet-user {
     justify-self: start;
-    display: flex;
-    align-items: center;
     gap: 12px;
 }
 
@@ -266,11 +271,11 @@ button:active {
 ================================================= */
 @media (max-width: 768px) {
     body {
-        padding-top: 104px;
+        padding-top: 112px;
     }
 
     .conet-navbar {
-        height: 104px;
+        height: 112px;
     }
 
     .conet-navbar-inner {
@@ -280,14 +285,12 @@ button:active {
     }
 
     .conet-nav-links {
-        transform: none;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .conet-nav-links a {
         width: auto;
-        height: auto;
         padding: 8px 16px;
     }
 
