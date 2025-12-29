@@ -142,7 +142,7 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – GLOBAL (IMPROVED UI)
+   TOP NAVBAR – FINAL, CALM & BALANCED
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -158,10 +158,10 @@ button:active {
 }
 
 .conet-navbar-inner {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     height: 100%;
-    padding: 0 24px;
+    padding: 0 32px;
 
     position: relative;
     display: flex;
@@ -169,16 +169,18 @@ button:active {
     justify-content: space-between;
 }
 
-/* =========================
-   LOGO – STRONG BRAND
-========================= */
+/* LOGO – bigger + pushed right */
+.conet-logo {
+    margin-right: 24px;
+}
+
 .conet-logo img {
-    height: 90px;          /* 🔥 הגדלה משמעותית */
+    height: 88px;
     width: auto;
 }
 
 /* =========================
-   NAV LINKS – CENTERED BUBBLES (DEFAULT)
+   NAV LINKS – CALM BUBBLES
 ========================= */
 .conet-nav-links {
     position: absolute;
@@ -197,37 +199,36 @@ button:active {
     padding: 8px 16px;
     border-radius: 999px;
 
-    background: rgba(44,128,255,0.10);      /* בועה כברירת מחדל */
-    border: 1.5px solid rgba(44,128,255,0.25);
+    background: rgba(44,128,255,0.08);
+    border: 1.4px solid rgba(44,128,255,0.22);
 
     transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.15s ease;
+        background 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
 }
 
 .conet-nav-links a:hover,
 .conet-nav-links a:focus-visible {
-    background: rgba(44,128,255,0.18);
+    background: rgba(44,128,255,0.14);
+    border-color: rgba(44,128,255,0.45);
     color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(44,128,255,0.25);
 }
 
-/* ACTIVE PAGE */
 .conet-nav-links a.active {
-    background: rgba(44,128,255,0.30);
+    background: rgba(44,128,255,0.22);
+    border-color: var(--primary-blue);
     color: var(--primary-blue);
-    box-shadow: 0 0 0 4px rgba(44,128,255,0.25);
 }
 
 /* =========================
-   USER AREA
+   USER AREA – pushed left
 ========================= */
 .conet-user {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-left: 24px;
 }
 
 .conet-greeting {
@@ -236,7 +237,6 @@ button:active {
     color: var(--text-dark);
 }
 
-/* Login – primary */
 .conet-user button:first-of-type {
     background: var(--primary-blue);
     color: #ffffff;
@@ -246,7 +246,6 @@ button:active {
     font-size: 0.85rem;
 }
 
-/* Logout – secondary */
 .conet-logout-btn {
     background: #ffffff;
     border: 1.6px solid #9ca3af;
@@ -284,6 +283,11 @@ button:active {
 
     .conet-user {
         order: -1;
+        margin-left: 0;
+    }
+
+    .conet-logo {
+        margin-right: 0;
     }
 }
 
