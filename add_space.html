@@ -8,7 +8,7 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS קיים -->
+    <!-- CSS גלובלי -->
     <link rel="stylesheet" href="auth.css">
 </head>
 <body>
@@ -21,9 +21,7 @@
 
         <!-- לוגו -->
         <div class="conet-logo">
-            <!-- אם אין קובץ לוגו – אפשר להשאיר טקסט -->
-            <img src="conetnew_logo" alt="CoNet">
-            <!-- <strong>CoNet</strong> -->
+            <img src="conetnew_logo.svg" alt="CoNet">
         </div>
 
         <!-- תפריט -->
@@ -33,10 +31,22 @@
             <a href="spaces.html">המרחבים של CoNet</a>
             <a href="events.html">האירועים של CoNet</a>
         </nav>
-                <!-- שמאל: משתמש -->
+
+        <!-- משתמש -->
         <div class="conet-user">
             <span class="conet-greeting">שלום, אורח</span>
-            <button class="conet-logout-btn">
+
+            <!-- התחברות -->
+            <button
+                class="conet-logout-btn"
+                onclick="window.location.href='login.html'">
+                התחברות
+            </button>
+
+            <!-- התנתקות -->
+            <button
+                class="conet-logout-btn"
+                onclick="logoutUser()">
                 התנתק
             </button>
         </div>
@@ -58,7 +68,6 @@
 
             <form id="add-space-form" class="form-inner">
 
-                <!-- שם מרחב -->
                 <div>
                     <label for="space_name">שם המרחב *</label>
                     <input
@@ -70,7 +79,6 @@
                     >
                 </div>
 
-                <!-- כתובת -->
                 <div>
                     <label for="address">כתובת *</label>
                     <input
@@ -85,7 +93,6 @@
                     <input type="hidden" id="google_place_id">
                 </div>
 
-                <!-- תיאור -->
                 <div>
                     <label for="description">תיאור המרחב</label>
                     <textarea
@@ -97,7 +104,6 @@
                     ></textarea>
                 </div>
 
-                <!-- מקומות -->
                 <div>
                     <label for="seats_available">מספר מקומות זמינים *</label>
                     <input
@@ -109,7 +115,6 @@
                     >
                 </div>
 
-                <!-- שעות -->
                 <div>
                     <label for="opening_hours">שעת פתיחה</label>
                     <input type="time" id="opening_hours" class="form-control">
@@ -120,7 +125,6 @@
                     <input type="time" id="closing_hours" class="form-control">
                 </div>
 
-                <!-- מתקנים -->
                 <div>
                     <label>שירותים ומתקנים</label>
                     <div id="facilities-container" style="font-size: 0.85rem; color:#6b7280;">
@@ -128,12 +132,10 @@
                     </div>
                 </div>
 
-                <!-- כפתור -->
                 <button type="submit" class="auth-btn">
                     שמור והוסף למפה
                 </button>
 
-                <!-- ביטול -->
                 <div class="auth-switch">
                     <a href="javascript:history.back()">ביטול</a>
                 </div>
