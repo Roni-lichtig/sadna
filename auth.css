@@ -181,31 +181,36 @@ button:active {
 }
 
 /* =========================
-   NAV – TRUE CENTER, FIXED WIDTH BUTTONS
+   NAV – TRUE CENTER, FIXED HEIGHT & WIDTH
 ========================= */
 .conet-nav-links {
     justify-self: center;
+    align-self: center;                 /* ✅ הרמה אנכית */
     display: flex;
     gap: 16px;
 }
 
 .conet-nav-links a {
-    width: 180px;                 /* קבוע – לפי הטקסט הארוך */
-    text-align: center;
-    white-space: nowrap;
+    width: 180px;                       /* ✅ אחיד לכל הכפתורים */
+    height: 36px;                       /* ✅ גובה קבוע לבאנר */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    white-space: nowrap;
+    line-height: 1;                     /* ✅ מונע “נפילה” */
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-dark);
     text-decoration: none;
 
-    padding: 10px 0;
     border-radius: 999px;
-
     background: rgba(44,128,255,0.07);
     border: 1.4px solid rgba(44,128,255,0.22);
 
-    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    transition: background 0.15s ease,
+                border-color 0.15s ease,
+                color 0.15s ease;
 }
 
 .conet-nav-links a:hover {
@@ -281,13 +286,11 @@ button:active {
 
     .conet-nav-links a {
         width: auto;
+        height: auto;
         padding: 8px 16px;
     }
 
-    .conet-user {
-        justify-self: center;
-    }
-
+    .conet-user,
     .conet-logo {
         justify-self: center;
     }
