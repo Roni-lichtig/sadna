@@ -181,24 +181,29 @@ button:active {
 }
 
 /* =========================
-   NAV – TRUE CENTER, FIXED HEIGHT & WIDTH
+   NAV – TRUE CENTER (FIXED + LIFTED)
 ========================= */
 .conet-nav-links {
     justify-self: center;
-    align-self: center;                 /* ✅ הרמה אנכית */
+    align-self: center;
     display: flex;
     gap: 16px;
+
+    /* ✅ הרמה ויזואלית עדינה למרכז הבאנר */
+    transform: translateY(-3px);
 }
 
 .conet-nav-links a {
-    width: 180px;                       /* ✅ אחיד לכל הכפתורים */
-    height: 36px;                       /* ✅ גובה קבוע לבאנר */
+    width: 180px;
+    height: 36px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
     white-space: nowrap;
-    line-height: 1;                     /* ✅ מונע “נפילה” */
+    line-height: 1;
+
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-dark);
@@ -280,6 +285,7 @@ button:active {
     }
 
     .conet-nav-links {
+        transform: none;
         flex-wrap: wrap;
         justify-content: center;
     }
