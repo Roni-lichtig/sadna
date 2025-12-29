@@ -99,12 +99,12 @@ button,
 .conet-user button {
     font-weight: 600;
     cursor: pointer;
-    transition: box-shadow 0.2s ease, transform 0.15s ease;
+    transition: box-shadow 0.15s ease, transform 0.1s ease;
 }
 
 button:hover,
 button:focus-visible {
-    box-shadow: 0 0 0 3px rgba(44,128,255,0.35);
+    box-shadow: 0 0 0 3px rgba(44,128,255,0.3);
     outline: none;
 }
 
@@ -142,7 +142,7 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – FINAL, CALM & BALANCED
+   TOP NAVBAR – FINAL & LOCKED
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -158,10 +158,10 @@ button:active {
 }
 
 .conet-navbar-inner {
-    max-width: 1280px;
+    max-width: 1400px;
     margin: 0 auto;
     height: 100%;
-    padding: 0 32px;
+    padding: 0 48px;
 
     position: relative;
     display: flex;
@@ -169,9 +169,9 @@ button:active {
     justify-content: space-between;
 }
 
-/* LOGO – bigger + pushed right */
+/* LOGO – RIGHT */
 .conet-logo {
-    margin-right: 24px;
+    margin-right: 56px;
 }
 
 .conet-logo img {
@@ -179,18 +179,21 @@ button:active {
     width: auto;
 }
 
-/* =========================
-   NAV LINKS – CALM BUBBLES
-========================= */
+/* NAV – TRUE CENTER, ONE LINE */
 .conet-nav-links {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
     display: flex;
-    gap: 14px;
+    gap: 16px;
+
+    white-space: nowrap;
 }
 
 .conet-nav-links a {
+    white-space: nowrap;
+
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-dark);
@@ -199,36 +202,30 @@ button:active {
     padding: 8px 16px;
     border-radius: 999px;
 
-    background: rgba(44,128,255,0.08);
+    background: rgba(44,128,255,0.07);
     border: 1.4px solid rgba(44,128,255,0.22);
 
-    transition:
-        background 0.18s ease,
-        border-color 0.18s ease,
-        color 0.18s ease;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-.conet-nav-links a:hover,
-.conet-nav-links a:focus-visible {
-    background: rgba(44,128,255,0.14);
-    border-color: rgba(44,128,255,0.45);
+.conet-nav-links a:hover {
+    background: rgba(44,128,255,0.12);
+    border-color: rgba(44,128,255,0.4);
     color: var(--primary-blue);
 }
 
 .conet-nav-links a.active {
-    background: rgba(44,128,255,0.22);
+    background: rgba(44,128,255,0.2);
     border-color: var(--primary-blue);
     color: var(--primary-blue);
 }
 
-/* =========================
-   USER AREA – pushed left
-========================= */
+/* USER AREA – LEFT */
 .conet-user {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-left: 24px;
+    margin-left: 56px;
 }
 
 .conet-greeting {
@@ -237,6 +234,7 @@ button:active {
     color: var(--text-dark);
 }
 
+/* Login */
 .conet-user button:first-of-type {
     background: var(--primary-blue);
     color: #ffffff;
@@ -246,6 +244,7 @@ button:active {
     font-size: 0.85rem;
 }
 
+/* Logout */
 .conet-logout-btn {
     background: #ffffff;
     border: 1.6px solid #9ca3af;
@@ -278,6 +277,7 @@ button:active {
         transform: none;
         flex-wrap: wrap;
         justify-content: center;
+        white-space: normal;
         gap: 12px;
     }
 
