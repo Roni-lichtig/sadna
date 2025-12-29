@@ -142,7 +142,7 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – FINAL & LOCKED
+   TOP NAVBAR – FINAL STRUCTURE (GRID)
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -158,20 +158,21 @@ button:active {
 }
 
 .conet-navbar-inner {
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
     height: 100%;
     padding: 0 48px;
 
-    position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
 }
 
-/* LOGO – RIGHT */
+/* =========================
+   LOGO – RIGHT
+========================= */
 .conet-logo {
-    margin-right: 56px;
+    justify-self: end;
 }
 
 .conet-logo img {
@@ -179,19 +180,18 @@ button:active {
     width: auto;
 }
 
-/* NAV – TRUE CENTER, ONE LINE */
+/* =========================
+   NAV – TRUE CENTER, FIXED WIDTH BUTTONS
+========================= */
 .conet-nav-links {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
+    justify-self: center;
     display: flex;
     gap: 16px;
-
-    white-space: nowrap;
 }
 
 .conet-nav-links a {
+    width: 180px;                 /* קבוע – לפי הטקסט הארוך */
+    text-align: center;
     white-space: nowrap;
 
     font-size: 0.9rem;
@@ -199,7 +199,7 @@ button:active {
     color: var(--text-dark);
     text-decoration: none;
 
-    padding: 8px 16px;
+    padding: 10px 0;
     border-radius: 999px;
 
     background: rgba(44,128,255,0.07);
@@ -220,12 +220,14 @@ button:active {
     color: var(--primary-blue);
 }
 
-/* USER AREA – LEFT */
+/* =========================
+   USER AREA – LEFT
+========================= */
 .conet-user {
+    justify-self: start;
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-left: 56px;
+    gap: 12px;
 }
 
 .conet-greeting {
@@ -267,27 +269,27 @@ button:active {
     }
 
     .conet-navbar-inner {
-        flex-direction: column;
-        justify-content: center;
-        gap: 10px;
+        grid-template-columns: 1fr;
+        row-gap: 12px;
+        justify-items: center;
     }
 
     .conet-nav-links {
-        position: static;
-        transform: none;
         flex-wrap: wrap;
         justify-content: center;
-        white-space: normal;
-        gap: 12px;
+    }
+
+    .conet-nav-links a {
+        width: auto;
+        padding: 8px 16px;
     }
 
     .conet-user {
-        order: -1;
-        margin-left: 0;
+        justify-self: center;
     }
 
     .conet-logo {
-        margin-right: 0;
+        justify-self: center;
     }
 }
 
