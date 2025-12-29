@@ -34,10 +34,9 @@
 }
 
 .conet-logo img {
-    height: 58px;              /* גדול, ברור, דומיננטי */
-    width: auto;
-    transform: none;           /* בלי טריקים */
-    display: block;
+    height: 44px;              /* גודל אמיתי */
+    transform: scale(1.45);    /* הגדלה ויזואלית */
+    transform-origin: right center;
 }
 
 /* =========================
