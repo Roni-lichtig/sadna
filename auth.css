@@ -9,6 +9,7 @@
 body {
     margin: 0;
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
+    padding-top: 72px; /* מקום לבאנר העליון */
 }
 
 /* =========================
@@ -35,10 +36,10 @@ body {
 ========================= */
 .auth-logo img {
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 28px;
 
     width: 160px;
-    transform: scale(1.3);     /* מעט פחות מבעבר */
+    transform: scale(1.4);
     transform-origin: center;
 
     pointer-events: none;
@@ -50,17 +51,13 @@ body {
 .auth-card {
     background: #ffffff;
     border-radius: 22px;
-    padding: 32px 32px 36px;
-
+    padding: 36px 32px 40px;
     box-shadow:
         0 10px 25px rgba(0,0,0,0.06),
         0 30px 60px rgba(79,163,247,0.12);
-
     display: flex;
     flex-direction: column;
-
-    /* 🔥 זה התיקון החשוב */
-    min-height: auto;
+    min-height: 600px;
 }
 
 /* =========================
@@ -76,25 +73,22 @@ body {
 .auth-subtext {
     font-size: 0.95rem;
     color: #6b7280;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 /* =========================
-   TABS – SEGMENTED CONTROL
+   TABS
 ========================= */
 .auth-tabs {
     display: flex;
     justify-content: center;
     align-items: center;
-
     background: #eef4ff;
     border-radius: 999px;
-
     padding: 6px;
     gap: 6px;
-
     width: fit-content;
-    margin: 0 auto 28px;
+    margin: 0 auto 32px;
 }
 
 .auth-tabs .nav-item {
@@ -103,41 +97,23 @@ body {
 
 .auth-tabs .nav-link {
     all: unset;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 42px;
-
     border-radius: 999px;
     cursor: pointer;
-
     font-size: 0.95rem;
     font-weight: 600;
     color: #2563eb;
-
-    transition: background 0.25s ease,
-                color 0.25s ease,
-                box-shadow 0.25s ease;
+    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .auth-tabs .nav-link.active {
     background: #2C80FF;
     color: #ffffff;
     box-shadow: 0 6px 12px rgba(37,99,235,0.35);
-}
-
-/* =========================
-   TAB CONTENT
-========================= */
-.tab-content {
-    display: flex;
-}
-
-.tab-pane {
-    width: 100%;
 }
 
 /* =========================
@@ -162,12 +138,7 @@ label {
     padding: 12px 16px;
     border: 1px solid #d1d9e6;
     font-size: 0.95rem;
-    transition: border-color 0.2s ease,
-                box-shadow 0.2s ease;
-}
-
-.form-control::placeholder {
-    color: #9ca3af;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-control:focus {
@@ -176,35 +147,22 @@ label {
     outline: none;
 }
 
-/* ריווח פנימי לטפסים */
-#login form,
-#signup form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
 /* =========================
    PRIMARY BUTTON
 ========================= */
 .auth-btn {
     display: block;
     width: 85%;
-    margin: 28px auto 0;
-
+    margin: 32px auto 0;
     padding: 14px 0;
     border-radius: 999px;
     border: none;
-
     background: #2C80FF;
     color: #ffffff;
-
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-
-    transition: transform 0.15s ease,
-                box-shadow 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .auth-btn:hover {
@@ -219,7 +177,6 @@ label {
     margin-top: 16px;
     font-size: 0.85rem;
     text-align: center;
-    color: #555;
 }
 
 .auth-switch a {
@@ -232,18 +189,83 @@ label {
     text-decoration: underline;
 }
 
+/* =================================================
+   TOP NAVBAR – CoNet (NEW, SAFE ADDITION)
+================================================= */
+.conet-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.conet-navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.conet-logo img {
+    height: 36px;
+}
+
+.conet-nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.conet-nav-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1f2937;
+    position: relative;
+}
+
+.conet-nav-links a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #2C80FF;
+    transition: width 0.25s ease;
+}
+
+.conet-nav-links a:hover::after {
+    width: 100%;
+}
+
 /* =========================
    MOBILE
 ========================= */
-@media (max-width: 480px) {
-    .auth-card {
-        padding: 26px 22px 30px;
-        min-height: auto;
+@media (max-width: 768px) {
+    .conet-navbar-inner {
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .auth-logo img {
-        width: 140px;
-        transform: scale(1.2);
+    .conet-nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 28px 22px 32px;
+        min-height: 620px;
     }
 
     .auth-tabs .nav-item {
