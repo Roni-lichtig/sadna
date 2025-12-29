@@ -9,7 +9,7 @@
 body {
     margin: 0;
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    padding-top: 72px; /* מותאם לגובה הבאנר */
+    padding-top: 72px; /* גובה הבאנר */
 }
 
 /* =========================
@@ -96,7 +96,6 @@ label {
     padding: 12px 16px;
     border: 1px solid #d1d9e6;
     font-size: 0.95rem;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-control:focus {
@@ -120,11 +119,9 @@ label {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .auth-btn:hover {
-    transform: translateY(-1px);
     box-shadow: 0 10px 20px rgba(37,99,235,0.35);
 }
 
@@ -143,21 +140,16 @@ label {
     text-decoration: none;
 }
 
-.auth-switch a:hover {
-    text-decoration: underline;
-}
-
 /* =================================================
-   TOP NAVBAR – CoNet (FINAL & STABLE)
+   TOP NAVBAR – CoNet (RTL SAFE – FINAL)
 ================================================= */
 .conet-navbar {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1000;
-
     height: 72px;
+    z-index: 1000;
 
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
@@ -167,31 +159,26 @@ label {
 .conet-navbar-inner {
     max-width: 1200px;
     margin: 0 auto;
+    height: 100%;
     padding: 0 24px;
 
-    height: 100%;
-
-    display: grid;
-    grid-template-columns: 200px auto 200px;
+    position: relative;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 /* RIGHT – LOGO */
-.conet-logo {
-    justify-self: end;
-    display: flex;
-    align-items: center;
-}
-
 .conet-logo img {
     height: 48px;
-    width: auto;
     display: block;
 }
 
-/* CENTER – NAV */
+/* CENTER – NAV (absolute true center) */
 .conet-nav-links {
-    justify-self: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 28px;
 }
@@ -201,64 +188,22 @@ label {
     font-size: 0.9rem;
     font-weight: 600;
     color: #1f2937;
-    position: relative;
-}
-
-.conet-nav-links a::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background: #2C80FF;
-    transition: width 0.25s ease;
-}
-
-.conet-nav-links a:hover::after {
-    width: 100%;
 }
 
 /* LEFT – USER */
 .conet-user {
-    justify-self: start;
     display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.conet-greeting {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #1f2937;
 }
 
 .conet-logout-btn {
     background: #ffffff;
     border: 1.6px solid #9ca3af;
     color: #374151;
-
     padding: 6px 12px;
     border-radius: 999px;
-
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
-
-    transition: all 0.2s ease;
-}
-
-.conet-logout-btn:hover {
-    border-color: #ef4444;
-    color: #ef4444;
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 480px) {
-    .auth-card {
-        padding: 28px 22px 32px;
-        min-height: 620px;
-    }
 }
