@@ -1,9 +1,17 @@
 /* =========================
-   RESET & BASE
+   RESET & SYSTEM COLORS
 ========================= */
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-blue: #2C80FF;
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
+    --border-soft: #d1d9e6;
+    --bg-white: #ffffff;
 }
 
 body {
@@ -23,31 +31,16 @@ body {
     padding: 32px 16px;
 }
 
-/* =========================
-   CONTAINER
-========================= */
 .auth-container {
     width: 100%;
     max-width: 420px;
 }
 
 /* =========================
-   LOGO (AUTH CARD)
-========================= */
-.auth-logo img {
-    display: block;
-    margin: 0 auto 28px;
-    width: 160px;
-    transform: scale(1.4);
-    transform-origin: center;
-    pointer-events: none;
-}
-
-/* =========================
-   CARD
+   AUTH CARD
 ========================= */
 .auth-card {
-    background: #ffffff;
+    background: var(--bg-white);
     border-radius: 22px;
     padding: 36px 32px 40px;
     box-shadow:
@@ -58,29 +51,22 @@ body {
     min-height: 600px;
 }
 
-/* =========================
-   HEADERS
-========================= */
 .auth-heading {
     font-size: 1.7rem;
     font-weight: 700;
     margin-bottom: 6px;
-    color: #1f2937;
+    color: var(--text-dark);
 }
 
 .auth-subtext {
     font-size: 0.95rem;
-    color: #6b7280;
+    color: var(--text-muted);
     margin-bottom: 32px;
 }
 
 /* =========================
    FORM
 ========================= */
-.form-inner {
-    width: 100%;
-}
-
 label {
     display: block;
     text-align: right;
@@ -94,35 +80,46 @@ label {
     width: 100%;
     border-radius: 999px;
     padding: 12px 16px;
-    border: 1px solid #d1d9e6;
+    border: 1px solid var(--border-soft);
     font-size: 0.95rem;
 }
 
 .form-control:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(44,128,255,0.15);
     outline: none;
 }
 
 /* =========================
-   PRIMARY BUTTON
+   BUTTONS – GLOBAL
 ========================= */
+button,
+.auth-btn,
+.conet-logout-btn {
+    font-weight: 600;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
 .auth-btn {
-    display: block;
     width: 85%;
     margin: 32px auto 0;
     padding: 14px 0;
     border-radius: 999px;
     border: none;
-    background: #2C80FF;
+    background: var(--primary-blue);
     color: #ffffff;
     font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
 }
 
-.auth-btn:hover {
-    box-shadow: 0 10px 20px rgba(37,99,235,0.35);
+button:hover,
+button:focus-visible {
+    box-shadow: 0 0 0 3px rgba(44,128,255,0.35);
+    outline: none;
+}
+
+button:active {
+    transform: scale(0.97);
 }
 
 /* =========================
@@ -135,13 +132,13 @@ label {
 }
 
 .auth-switch a {
-    color: #4FA3F7;
+    color: var(--primary-blue);
     font-weight: 600;
     text-decoration: none;
 }
 
 /* =================================================
-   TOP NAVBAR – CoNet (RTL SAFE – FINAL)
+   TOP NAVBAR – GLOBAL (RTL SAFE)
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -151,7 +148,7 @@ label {
     height: 72px;
     z-index: 1000;
 
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(8px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
@@ -168,13 +165,13 @@ label {
     justify-content: space-between;
 }
 
-/* RIGHT – LOGO */
+/* LOGO */
 .conet-logo img {
     height: 48px;
     display: block;
 }
 
-/* CENTER – NAV (absolute true center) */
+/* NAV LINKS – TEXT STYLES */
 .conet-nav-links {
     position: absolute;
     left: 50%;
@@ -184,17 +181,29 @@ label {
 }
 
 .conet-nav-links a {
-    text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 6px 4px;
 }
 
-/* LEFT – USER */
+.conet-nav-links a:hover,
+.conet-nav-links a:focus-visible {
+    color: var(--primary-blue);
+}
+
+/* USER AREA */
 .conet-user {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.conet-greeting {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
 .conet-logout-btn {
@@ -204,6 +213,48 @@ label {
     padding: 6px 12px;
     border-radius: 999px;
     font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
+}
+
+/* =================================================
+   MOBILE
+================================================= */
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 96px; /* הבאנר גבוה יותר במובייל */
+    }
+
+    .conet-navbar {
+        height: 96px;
+    }
+
+    .conet-navbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .conet-nav-links {
+        position: static;
+        transform: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .conet-user {
+        order: -1;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .auth-card {
+        padding: 28px 22px 32px;
+        min-height: 620px;
+    }
+
+    .auth-btn {
+        width: 100%;
+    }
 }
