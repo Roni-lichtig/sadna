@@ -142,7 +142,7 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – GLOBAL
+   TOP NAVBAR – GLOBAL (IMPROVED UI)
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -169,19 +169,23 @@ button:active {
     justify-content: space-between;
 }
 
-/* LOGO */
+/* =========================
+   LOGO – STRONG BRAND
+========================= */
 .conet-logo img {
-    height: 60px;
+    height: 72px;          /* 🔥 הגדלה משמעותית */
     width: auto;
 }
 
-/* NAV LINKS – PILL BUTTONS */
+/* =========================
+   NAV LINKS – CENTERED BUBBLES (DEFAULT)
+========================= */
 .conet-nav-links {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 18px;
+    gap: 14px;
 }
 
 .conet-nav-links a {
@@ -190,20 +194,36 @@ button:active {
     color: var(--text-dark);
     text-decoration: none;
 
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 999px;
 
-    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    background: rgba(44,128,255,0.10);      /* בועה כברירת מחדל */
+    border: 1.5px solid rgba(44,128,255,0.25);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
 }
 
 .conet-nav-links a:hover,
 .conet-nav-links a:focus-visible {
-    background: rgba(44,128,255,0.12);
+    background: rgba(44,128,255,0.18);
     color: var(--primary-blue);
     box-shadow: 0 0 0 3px rgba(44,128,255,0.25);
 }
 
-/* USER AREA */
+/* ACTIVE PAGE */
+.conet-nav-links a.active {
+    background: rgba(44,128,255,0.30);
+    color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(44,128,255,0.25);
+}
+
+/* =========================
+   USER AREA
+========================= */
 .conet-user {
     display: flex;
     align-items: center;
@@ -221,7 +241,7 @@ button:active {
     background: var(--primary-blue);
     color: #ffffff;
     border: none;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 999px;
     font-size: 0.85rem;
 }
@@ -231,7 +251,7 @@ button:active {
     background: #ffffff;
     border: 1.6px solid #9ca3af;
     color: #374151;
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 999px;
     font-size: 0.8rem;
 }
@@ -241,11 +261,11 @@ button:active {
 ================================================= */
 @media (max-width: 768px) {
     body {
-        padding-top: 96px;
+        padding-top: 104px;
     }
 
     .conet-navbar {
-        height: 96px;
+        height: 104px;
     }
 
     .conet-navbar-inner {
