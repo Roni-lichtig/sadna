@@ -57,4 +57,89 @@
 
 <!-- =========================
      PAGE CONTENT
-============
+========================= -->
+<div class="auth-wrapper">
+  <div class="auth-container">
+
+    <div class="auth-card">
+
+      <h2 class="auth-heading">הרשמה</h2>
+      <p class="auth-subtext">יצירת חשבון חדש ב־CoNet ✨</p>
+
+      <form id="signupForm">
+
+        <div class="row">
+          <div class="col-6 mb-3">
+            <label for="firstName">שם פרטי</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              required
+            >
+          </div>
+
+          <div class="col-6 mb-3">
+            <label for="lastName">שם משפחה</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="userType">סוג משתמש</label>
+          <select
+            class="form-control"
+            id="userType"
+            required
+          >
+            <option value="" disabled selected>בחרי סוג משתמש</option>
+            <option value="community_manager">מנהלת קהילה</option>
+            <option value="space_manager">מנהלת מרחב</option>
+            <option value="regular">משתמשת פרטית</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="signupEmail">אימייל</label>
+          <input
+            type="email"
+            class="form-control"
+            id="signupEmail"
+            required
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="signupPassword">סיסמה</label>
+          <input
+            type="password"
+            class="form-control"
+            id="signupPassword"
+            required
+          >
+        </div>
+
+        <button type="submit" class="auth-btn">
+          יצירת חשבון חדש
+        </button>
+
+      </form>
+
+      <p class="auth-switch">
+        כבר יש לך חשבון?
+        <a href="login.html">התחברות</a>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<!-- AUTH LOGIC -->
+<script src="auth.js"></script>
+</body>
+</html>
