@@ -1,5 +1,5 @@
 /* =================================================
-   LANDING PAGE – CoNet SaaS Style
+   LANDING PAGE – CoNet SaaS (ENHANCED)
 ================================================= */
 
 :root {
@@ -14,12 +14,42 @@
 ========================= */
 .landing-hero {
     min-height: calc(100vh - 80px);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
     padding: 0 20px;
-    position: relative;
+}
+
+/* =========================
+   WAVES
+========================= */
+.waves {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.waves svg {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 60%;
+    fill: rgba(44,128,255,0.18);
+    animation: waveMove 25s linear infinite;
+}
+
+.waves svg:nth-child(2) {
+    bottom: -40px;
+    fill: rgba(44,128,255,0.12);
+    animation-duration: 40s;
+}
+
+@keyframes waveMove {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
 /* =========================
@@ -31,107 +61,55 @@
 }
 
 .hero-inner h1 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 16px;
 }
 
-.hero-inner p {
+.hero-subtitle {
     font-size: 1.05rem;
     color: var(--text-muted);
     line-height: 1.7;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
 }
 
 /* =========================
-   CTA BUTTONS
+   FEATURES
 ========================= */
-.hero-actions {
+.hero-features {
     display: flex;
-    gap: 16px;
     justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
 }
 
+.hero-features span {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    background: rgba(255,255,255,0.6);
+    padding: 8px 16px;
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+}
+
+/* =========================
+   CTA
+========================= */
 .primary-cta {
     background: var(--primary-blue);
     color: white;
     border: none;
-    padding: 14px 32px;
+    padding: 16px 36px;
     border-radius: 999px;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .primary-cta:hover {
     background: var(--primary-hover);
-}
-
-.secondary-cta {
-    background: white;
-    color: var(--primary-blue);
-    border: 1.6px solid rgba(44,128,255,0.35);
-    padding: 14px 32px;
-    border-radius: 999px;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.secondary-cta:hover {
-    background: rgba(44,128,255,0.08);
-}
-
-/* =========================
-   WAVES BACKGROUND
-========================= */
-.with-waves {
-    overflow: hidden;
-}
-
-.waves-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.waves-bg span {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    left: -50%;
-    top: 60%;
-    background: radial-gradient(
-        circle at 50% 50%,
-        rgba(44,128,255,0.12),
-        rgba(44,128,255,0.03) 45%,
-        transparent 70%
-    );
-    border-radius: 45%;
-    animation: waveRotate 80s linear infinite;
-}
-
-.waves-bg span:nth-child(1) {
-    animation-duration: 100s;
-    opacity: 0.35;
-}
-
-.waves-bg span:nth-child(2) {
-    top: 65%;
-    animation-duration: 70s;
-    opacity: 0.25;
-}
-
-.waves-bg span:nth-child(3) {
-    top: 72%;
-    animation-duration: 120s;
-    opacity: 0.2;
-}
-
-@keyframes waveRotate {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
 }
 
 /* =========================
@@ -139,10 +117,10 @@
 ========================= */
 @media (max-width: 600px) {
     .hero-inner h1 {
-        font-size: 2.1rem;
+        font-size: 2.2rem;
     }
 
-    .hero-inner p {
-        font-size: 0.95rem;
+    .hero-features {
+        gap: 12px;
     }
 }
