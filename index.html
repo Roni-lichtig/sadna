@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoNet – עובדים טוב יותר, ביחד</title>
 
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Global navbar -->
+    <!-- Global CSS (navbar וכו') -->
     <link rel="stylesheet" href="auth.css">
 
-    <!-- Landing only -->
+    <!-- Landing page CSS -->
     <link rel="stylesheet" href="landing.css">
 </head>
 <body>
 
+<!-- =========================
+     TOP NAVBAR
+========================= -->
 <header class="conet-navbar">
     <div class="conet-navbar-inner">
 
@@ -24,13 +27,15 @@
         </div>
 
         <nav class="conet-nav-links">
-            <a href="communities.html">הקהילות של CoNet</a>
             <a href="search.html">המרחבים של CoNet</a>
+            <a href="communities.html">הקהילות של CoNet</a>
             <a href="events.html">האירועים של CoNet</a>
         </nav>
 
         <div class="conet-user">
-            <button onclick="window.location.href='login.html'">
+            <button
+                class="conet-logout-btn"
+                onclick="window.location.href='login.html'">
                 התחברות
             </button>
         </div>
@@ -38,25 +43,22 @@
     </div>
 </header>
 
+<!-- =========================
+     HERO
+========================= -->
 <main class="hero">
-
-    <!-- Decorative waves -->
-    <div class="waves">
-        <span class="wave wave-1"></span>
-        <span class="wave wave-2"></span>
-        <span class="wave wave-3"></span>
-        <span class="wave wave-4"></span>
-        <span class="wave wave-5"></span>
-    </div>
 
     <div class="hero-content">
         <h1>עובדים טוב יותר, ביחד</h1>
+
         <p>
-            פלטפורמה אחת שמחברת בין אנשים, קהילות ומרחבי עבודה –  
+            פלטפורמה אחת שמחברת בין אנשים, קהילות ומרחבי עבודה –
             לשיתופי פעולה, אירועים וחיבורים אמיתיים.
         </p>
 
-        <button class="hero-cta" onclick="window.location.href='signup.html'">
+        <button
+            class="hero-cta"
+            onclick="window.location.href='signup.html'">
             הצטרפות ל-CoNet
         </button>
     </div>
