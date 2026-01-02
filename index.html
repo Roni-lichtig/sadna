@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoNet – Work Together</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoNet – עובדים טוב יותר, ביחד</title>
 
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Global CSS -->
+    <!-- Global navbar + system design -->
     <link rel="stylesheet" href="auth.css">
 
-    <!-- Landing CSS -->
+    <!-- Landing specific -->
     <link rel="stylesheet" href="landing.css">
 </head>
 <body>
 
+<!-- =========================
+     TOP NAVBAR (GUEST)
+========================= -->
 <header class="conet-navbar">
     <div class="conet-navbar-inner">
 
@@ -24,49 +27,53 @@
         </div>
 
         <nav class="conet-nav-links">
-            <a href="search.html">המרחבים של CoNet</a>
             <a href="communities.html">הקהילות של CoNet</a>
+            <a href="search.html">המרחבים של CoNet</a>
             <a href="events.html">האירועים של CoNet</a>
         </nav>
 
         <div class="conet-user">
-            <button class="conet-logout-btn" onclick="window.location.href='login.html'">
-                התחברות
+            <button onclick="window.location.href='signup.html'">
+                הצטרפות
             </button>
         </div>
 
     </div>
 </header>
 
-<main class="landing-hero">
+<!-- =========================
+     HERO
+========================= -->
+<main class="hero">
 
     <!-- WAVES BACKGROUND -->
     <div class="wave-bg">
         <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
-            <path d="M0 200 C 300 180, 600 260, 900 220, 1200 180, 1440 210"
-                  class="wave wave1"/>
-            <path d="M0 320 C 300 300, 600 380, 900 340, 1200 300, 1440 330"
-                  class="wave wave2"/>
-            <path d="M0 460 C 300 440, 600 520, 900 480, 1200 440, 1440 470"
-                  class="wave wave3"/>
+            <path d="M0 260 C 300 240, 600 300, 900 260, 1200 230, 1440 260" class="wave wave1"/>
+            <path d="M0 290 C 300 270, 600 330, 900 290, 1200 260, 1440 290" class="wave wave2"/>
+            <path d="M0 320 C 300 300, 600 360, 900 320, 1200 290, 1440 320" class="wave wave3"/>
+            <path d="M0 350 C 300 330, 600 390, 900 350, 1200 320, 1440 350" class="wave wave4"/>
+            <path d="M0 380 C 300 360, 600 420, 900 380, 1200 350, 1440 380" class="wave wave5"/>
+            <path d="M0 410 C 300 390, 600 450, 900 410, 1200 380, 1440 410" class="wave wave6"/>
         </svg>
     </div>
 
-    <div class="hero-inner">
+    <!-- CONTENT -->
+    <div class="hero-content">
         <h1>עובדים טוב יותר, ביחד</h1>
 
-        <p class="hero-subtitle">
-            פלטפורמה אחת שמחברת בין אנשים, קהילות ומרחבי עבודה –
+        <p>
+            פלטפורמה אחת שמחברת בין אנשים, קהילות ומרחבי עבודה –  
             לשיתופי פעולה, אירועים וחיבורים אמיתיים.
         </p>
 
-        <div class="hero-features">
+        <div class="hero-tags">
             <span>מציאת מרחבים</span>
             <span>קהילות פעילות</span>
             <span>אירועים משותפים</span>
         </div>
 
-        <button class="primary-cta" onclick="window.location.href='signup.html'">
+        <button class="hero-cta" onclick="window.location.href='signup.html'">
             הצטרפות ל-CoNet
         </button>
     </div>
