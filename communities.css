@@ -1,9 +1,5 @@
 /* =================================================
-   COMMUNITIES – CoNet (WORKING WITH auth.css NAVBAR)
-   Fixes:
-   - no global button overrides (won't break navbar)
-   - consistent spacing under fixed banner
-   - centered, not-too-wide filters bar
+   COMMUNITIES – Final CoNet CSS (Fixed Layout)
 ================================================= */
 
 :root {
@@ -16,39 +12,37 @@
     --border-soft: #d1d9e6;
 }
 
-/* ✅ Don't fight auth.css.
-   If auth.css is loaded -> it already sets padding-top.
-   If not, we still keep the page safe. */
+/* =========================
+   BODY & GLOBAL
+========================= */
 body {
     margin: 0;
     direction: rtl;
-    color: var(--text-main);
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    padding-top: 80px; /* safe fallback */
+    color: var(--text-main);
+    padding-top: 80px; /* חשוב – תואם לגובה הבאנר */
 }
 
 /* =========================
-   MAIN CONTAINER
+   MAIN CONTAINER (מתחת לבאנר)
 ========================= */
 .main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 32px 20px 80px;
     width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px 80px;
     box-sizing: border-box;
 }
 
 /* =========================
-   FILTERS BAR (CENTERED CARD)
+   FILTERS BAR
 ========================= */
 .filters-bar {
     width: 100%;
-    max-width: 980px;          /* ✅ prevents the "giant pill" */
-    margin: 0 auto 36px;       /* ✅ centered */
+    margin-top: 14px; /* תיקון חשוב */
     background: var(--card-bg);
-    padding: 22px 22px;
+    padding: 20px;
     border-radius: 24px;
-
     box-shadow:
         0 10px 25px rgba(0,0,0,0.06),
         0 30px 60px rgba(79,163,247,0.12);
@@ -60,10 +54,10 @@ body {
     flex-wrap: wrap;
 }
 
-/* Search input */
+/* INPUT */
 .search-box {
-    flex: 1 1 360px;
-    max-width: 520px;
+    flex: 1 1 320px;
+    max-width: 480px;
 }
 
 .search-box input {
@@ -72,7 +66,7 @@ body {
     border: 1px solid var(--border-soft);
     border-radius: 999px;
     font-size: 0.95rem;
-    background: #ffffff;
+    background: #fff;
 }
 
 .search-box input:focus {
@@ -81,8 +75,7 @@ body {
     box-shadow: 0 0 0 4px rgba(44,128,255,0.15);
 }
 
-/* ✅ IMPORTANT: scope button styles only to this page content
-   so we don't break navbar buttons */
+/* BUTTONS */
 .filters-bar button,
 .card-actions button {
     border: none;
@@ -91,8 +84,7 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: box-shadow 0.15s ease, transform 0.1s ease, background 0.15s ease;
-    font-family: inherit;
+    transition: box-shadow 0.15s ease, transform 0.1s ease;
 }
 
 .filters-bar button:hover,
@@ -100,28 +92,21 @@ body {
     box-shadow: 0 0 0 3px rgba(44,128,255,0.25);
 }
 
-.filters-bar button:active,
-.card-actions button:active {
-    transform: scale(0.97);
-}
-
 .filter-btn {
     background: var(--primary-blue);
-    color: #fff;
+    color: white;
 }
-
 .filter-btn:hover {
     background: var(--primary-hover);
 }
 
 .reset-btn {
-    background: #ffffff;
+    background: white;
     border: 1.5px solid var(--border-soft);
     color: var(--text-main);
 }
-
 .reset-btn:hover {
-    background: rgba(44,128,255,0.06);
+    background: rgba(44,128,255,0.08);
 }
 
 /* =========================
@@ -130,7 +115,8 @@ body {
 .communities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 26px;
+    gap: 24px;
+    margin-top: 10px;
 }
 
 /* =========================
@@ -140,20 +126,18 @@ body {
     background: var(--card-bg);
     border-radius: 22px;
     overflow: hidden;
-
     box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-
     display: flex;
     flex-direction: column;
-    min-height: 320px;
 }
 
 .community-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+/* IMAGE */
 .card-image {
     height: 170px;
     background-color: #e5ecfb;
@@ -161,7 +145,7 @@ body {
     background-position: center;
 }
 
-/* Content */
+/* CONTENT */
 .card-content {
     padding: 20px;
     flex: 1;
@@ -177,9 +161,9 @@ body {
 }
 
 .subject {
+    font-size: 0.92rem;
     font-weight: 600;
     color: var(--text-main);
-    font-size: 0.92rem;
     margin-bottom: 4px;
 }
 
@@ -189,19 +173,16 @@ body {
     margin-bottom: 14px;
 }
 
-/* =========================
-   CARD ACTIONS
-========================= */
+/* CARD ACTIONS */
 .card-actions {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     padding: 0 20px 20px;
 }
 
 .join-btn {
     width: 100%;
-    padding: 12px;
     background: var(--primary-blue);
     color: white;
 }
@@ -212,40 +193,33 @@ body {
 
 .chat-btn {
     width: 100%;
-    background: #ffffff;
+    background: white;
     color: var(--primary-blue);
     border: 1.5px solid rgba(44,128,255,0.45);
-    padding: 12px;
 }
 
 .chat-btn:hover {
     background: rgba(44,128,255,0.08);
 }
 
-/* =========================
-   STATES
-========================= */
+/* STATES */
 .loading,
 .no-results {
     text-align: center;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     margin-top: 40px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 @media (max-width: 600px) {
     .filters-bar {
         padding: 18px;
     }
-
     .search-box {
         flex: 1 1 100%;
         max-width: none;
     }
-
     .filters-bar button {
         width: 100%;
     }
