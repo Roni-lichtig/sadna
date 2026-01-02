@@ -1,8 +1,11 @@
+/* =================================================
+   LANDING PAGE – CoNet
+================================================= */
+
 :root {
-    --blue-1: rgba(44,128,255,0.35);
-    --blue-2: rgba(44,128,255,0.22);
-    --blue-3: rgba(44,128,255,0.15);
+    --primary-blue: #2C80FF;
     --text-main: #1f2937;
+    --text-muted: #6b7280;
 }
 
 /* =========================
@@ -12,111 +15,122 @@
     position: relative;
     height: calc(100vh - 80px);
     background: linear-gradient(180deg, #eef4ff 0%, #f6f9ff 100%);
+    overflow: hidden;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    text-align: center;
 }
 
 /* =========================
-   WAVES – REAL WAVES
+   FLOWING WAVES (TRUE WAVES)
 ========================= */
 .hero::before,
 .hero::after {
     content: "";
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background-repeat: repeat-x;
-    background-size: 1200px 400px;
-    animation: waveMove 40s linear infinite;
 }
 
-/* גל ראשון */
+/* Wave layer 1 */
 .hero::before {
     background-image:
-        repeating-radial-gradient(
-            circle at 50% 120%,
-            transparent 0 60px,
-            var(--blue-1) 62px 64px,
-            transparent 66px 120px
+        linear-gradient(
+            120deg,
+            rgba(44,128,255,0.28) 0%,
+            rgba(44,128,255,0.28) 6%,
+            transparent 6%,
+            transparent 12%
         );
-    opacity: 0.9;
+    background-size: 180px 100%;
+    background-position-y: 35%;
+    animation: waveMove 20s linear infinite;
 }
 
-/* גל שני – מקביל */
+/* Wave layer 2 */
 .hero::after {
     background-image:
-        repeating-radial-gradient(
-            circle at 50% 130%,
-            transparent 0 80px,
-            var(--blue-2) 82px 84px,
-            transparent 86px 140px
+        linear-gradient(
+            120deg,
+            rgba(44,128,255,0.18) 0%,
+            rgba(44,128,255,0.18) 5%,
+            transparent 5%,
+            transparent 11%
         );
-    animation-duration: 55s;
-    opacity: 0.8;
+    background-size: 240px 100%;
+    background-position-y: 55%;
+    animation: waveMoveReverse 28s linear infinite;
 }
 
 /* =========================
-   CONTENT
+   ANIMATIONS
+========================= */
+@keyframes waveMove {
+    from { background-position-x: 0; }
+    to   { background-position-x: 180px; }
+}
+
+@keyframes waveMoveReverse {
+    from { background-position-x: 0; }
+    to   { background-position-x: -240px; }
+}
+
+/* =========================
+   HERO CONTENT
 ========================= */
 .hero-content {
     position: relative;
-    z-index: 5;
-    text-align: center;
-    max-width: 640px;
+    z-index: 2;
+    max-width: 720px;
     padding: 0 20px;
 }
 
 .hero-content h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--text-main);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .hero-content p {
     font-size: 1.05rem;
-    color: #4b5563;
-    line-height: 1.7;
+    color: var(--text-muted);
     margin-bottom: 36px;
+    line-height: 1.6;
 }
 
+/* CTA */
 .hero-cta {
-    background: #2C80FF;
-    color: white;
-    border: none;
     padding: 16px 42px;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 600;
     border-radius: 999px;
+    border: none;
     cursor: pointer;
+
+    background: var(--primary-blue);
+    color: white;
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .hero-cta:hover {
-    box-shadow: 0 0 0 4px rgba(44,128,255,0.25);
+    box-shadow: 0 10px 25px rgba(44,128,255,0.35);
+    transform: translateY(-2px);
 }
 
-/* =========================
-   ANIMATION
-========================= */
-@keyframes waveMove {
-    from {
-        background-position-x: 0;
-    }
-    to {
-        background-position-x: 1200px;
-    }
+.hero-cta:active {
+    transform: scale(0.97);
 }
 
 /* =========================
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-    .hero {
-        height: calc(100vh - 112px);
-    }
-
     .hero-content h1 {
-        font-size: 2.1rem;
+        font-size: 2.3rem;
     }
 }
