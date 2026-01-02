@@ -1,5 +1,5 @@
 /* =================================================
-   SEARCH – MATCHING CoNet GLOBAL DESIGN
+   SEARCH – MATCHING CoNet GLOBAL DESIGN (NO INNER BANNER)
 ================================================= */
 
 :root {
@@ -27,7 +27,7 @@ body {
 ========================= */
 .app-container {
     display: flex;
-    height: calc(100vh - 80px); /* גובה מתחת לבאנר */
+    height: calc(100vh - 80px); /* מתחת לבאנר הראשי */
     overflow: hidden;
 }
 
@@ -43,35 +43,16 @@ body {
     z-index: 5;
 }
 
-/* Header */
+/* ❌ הסרנו את ה-sidebar-header לחלוטין */
 .sidebar-header {
-    padding: 1.6rem 1.4rem;
-    background: linear-gradient(135deg, #2C80FF, #4FA3F7);
-    color: white;
-    text-align: center;
-}
-
-.sidebar-header h1 {
-    margin: 0;
-    font-size: 1.4rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.sidebar-header p {
-    margin-top: 6px;
-    font-size: 0.85rem;
-    opacity: 0.9;
+    display: none;
 }
 
 /* =========================
    FILTERS
 ========================= */
 .filters-section {
-    padding: 1.5rem;
+    padding: 1.6rem 1.5rem;
     background-color: #fff;
     border-bottom: 1px solid var(--border-soft);
     display: flex;
