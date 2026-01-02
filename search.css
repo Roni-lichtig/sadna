@@ -36,7 +36,11 @@ body {
 ========================= */
 .sidebar {
     width: 380px;
-    background-color: var(--sidebar-bg);
+    background: linear-gradient(
+        180deg,
+        #eaf2ff 0%,
+        #f6f9ff 100%
+    ); /* כחול בהיר כמו בשאר המערכת */
     display: flex;
     flex-direction: column;
     box-shadow: 4px 0 20px rgba(0,0,0,0.06);
@@ -49,12 +53,16 @@ body {
 }
 
 /* =========================
-   FILTERS
+   FILTERS – CARD
 ========================= */
 .filters-section {
+    margin: 16px;
     padding: 1.6rem 1.5rem;
-    background-color: #fff;
-    border-bottom: 1px solid var(--border-soft);
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-soft);
+
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -164,22 +172,27 @@ button:active {
 }
 
 /* =========================
-   RESULTS
+   RESULTS – CARD
 ========================= */
 .results-header {
-    padding: 10px 1.5rem;
-    background: #f9fafb;
+    margin: 0 16px;
+    padding: 10px 1rem;
+    background: transparent;
     font-weight: 600;
     font-size: 0.8rem;
     color: var(--text-secondary);
-    border-bottom: 1px solid var(--border-soft);
 }
 
 .results-list {
+    margin: 0 16px 16px;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-soft);
+
     flex: 1;
     overflow-y: auto;
-    padding: 1rem;
-    background-color: #f9fafb;
 }
 
 /* =========================
