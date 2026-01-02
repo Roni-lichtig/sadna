@@ -1,11 +1,10 @@
 /* =================================================
-   COMMUNITIES – Final CoNet CSS (Fixed Layout)
+   COMMUNITIES – FINAL & STABLE
 ================================================= */
 
 :root {
     --primary-blue: #2C80FF;
     --primary-hover: #2563eb;
-    --bg-color: #f6f9ff;
     --card-bg: #ffffff;
     --text-main: #1f2937;
     --text-secondary: #6b7280;
@@ -13,38 +12,38 @@
 }
 
 /* =========================
-   BODY & GLOBAL
-   ⚠️ חשוב: padding-top מנוהל ב-auth.css
+   PAGE BASE
 ========================= */
 body {
     margin: 0;
     direction: rtl;
-    background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
     color: var(--text-main);
-}
 
-.page-content {
-    width: 100%;
+    /* 🔥 זה התיקון הקריטי */
+    min-height: 100vh;
 }
 
 /* =========================
-   MAIN CONTAINER (מתחת לבאנר)
+   MAIN CONTENT
 ========================= */
 .main-container {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 24px 16px 80px;
+    padding: 32px 16px 80px;
     box-sizing: border-box;
+
+    /* מכריח גובה מסך מתחת לבאנר */
+    min-height: calc(100vh - 80px);
 }
 
 /* =========================
-   FILTERS BAR
+   FILTER BAR
 ========================= */
 .filters-bar {
     width: 100%;
-    background: var(--card-bg);
-    padding: 20px;
+    background: white;
+    padding: 24px;
     border-radius: 24px;
     box-shadow:
         0 10px 25px rgba(0,0,0,0.06),
@@ -56,10 +55,9 @@ body {
     justify-content: center;
     flex-wrap: wrap;
 
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 
-/* INPUT */
 .search-box {
     flex: 1 1 320px;
     max-width: 480px;
@@ -68,10 +66,9 @@ body {
 .search-box input {
     width: 100%;
     padding: 12px 18px;
-    border: 1px solid var(--border-soft);
     border-radius: 999px;
+    border: 1px solid var(--border-soft);
     font-size: 0.95rem;
-    background: #fff;
 }
 
 .search-box input:focus {
@@ -80,32 +77,24 @@ body {
     box-shadow: 0 0 0 4px rgba(44,128,255,0.15);
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 .filters-bar button,
 .card-actions button {
-    border: none;
     border-radius: 999px;
     padding: 12px 22px;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: box-shadow 0.15s ease, transform 0.1s ease;
-}
-
-.filters-bar button:hover,
-.card-actions button:hover {
-    box-shadow: 0 0 0 3px rgba(44,128,255,0.25);
-}
-
-.filters-bar button:active,
-.card-actions button:active {
-    transform: scale(0.97);
+    border: none;
 }
 
 .filter-btn {
     background: var(--primary-blue);
     color: white;
 }
+
 .filter-btn:hover {
     background: var(--primary-hover);
 }
@@ -113,10 +102,6 @@ body {
 .reset-btn {
     background: white;
     border: 1.5px solid var(--border-soft);
-    color: var(--text-main);
-}
-.reset-btn:hover {
-    background: rgba(44,128,255,0.08);
 }
 
 /* =========================
@@ -126,7 +111,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
-    margin-top: 10px;
 }
 
 /* =========================
@@ -137,17 +121,10 @@ body {
     border-radius: 22px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
 }
 
-.community-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-/* IMAGE */
 .card-image {
     height: 170px;
     background-color: #e5ecfb;
@@ -155,82 +132,40 @@ body {
     background-position: center;
 }
 
-/* CONTENT */
 .card-content {
     padding: 20px;
     flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .card-content h3 {
-    margin: 0 0 6px 0;
     color: var(--primary-blue);
     font-size: 1.2rem;
-    font-weight: 700;
 }
 
-.subject {
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: var(--text-main);
-    margin-bottom: 4px;
-}
-
-.est-date {
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    margin-bottom: 14px;
-}
-
-/* CARD ACTIONS */
 .card-actions {
+    padding: 0 20px 20px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 0 20px 20px;
 }
 
 .join-btn {
-    width: 100%;
     background: var(--primary-blue);
     color: white;
 }
 
-.join-btn:hover {
-    background: var(--primary-hover);
-}
-
 .chat-btn {
-    width: 100%;
     background: white;
+    border: 1.5px solid var(--primary-blue);
     color: var(--primary-blue);
-    border: 1.5px solid rgba(44,128,255,0.45);
 }
 
-.chat-btn:hover {
-    background: rgba(44,128,255,0.08);
-}
-
-/* STATES */
+/* =========================
+   STATES
+========================= */
 .loading,
 .no-results {
     text-align: center;
-    font-size: 1rem;
-    color: var(--text-secondary);
     margin-top: 40px;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-    .filters-bar {
-        padding: 18px;
-    }
-    .search-box {
-        flex: 1 1 100%;
-        max-width: none;
-    }
-    .filters-bar button {
-        width: 100%;
-    }
+    color: var(--text-secondary);
 }
