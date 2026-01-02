@@ -22,12 +22,10 @@
 <header class="conet-navbar">
     <div class="conet-navbar-inner">
 
-        <!-- LOGO -->
         <div class="conet-logo">
             <img src="conetnew_logo.jpg" alt="CoNet">
         </div>
 
-        <!-- NAV -->
         <nav class="conet-nav-links">
             <a href="profile.html">הפרופיל שלי</a>
             <a href="communities.html" class="active">הקהילות של CoNet</a>
@@ -35,7 +33,6 @@
             <a href="events.html">האירועים של CoNet</a>
         </nav>
 
-        <!-- USER AREA -->
         <div class="conet-user">
             <span class="conet-greeting" id="userGreeting">שלום, אורח</span>
 
@@ -60,46 +57,40 @@
 <!-- =========================
      PAGE CONTENT
 ========================= -->
-<div class="main-container">
+<div class="page-content">
+    <div class="main-container">
 
-    <!-- סרגל חיפוש -->
-    <div class="filters-bar">
-        <div class="search-box">
-            <input
-                type="text"
-                id="search-input"
-                placeholder="חפש קהילה לפי שם או נושא..."
-            >
+        <div class="filters-bar">
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="חפש קהילה לפי שם או נושא..."
+                >
+            </div>
+
+            <button onclick="filterCommunities()" class="filter-btn">
+                חפש
+            </button>
+
+            <button onclick="resetFilters()" class="reset-btn">
+                הצג הכל
+            </button>
         </div>
 
-        <button onclick="filterCommunities()" class="filter-btn">
-            חפש
-        </button>
+        <div id="loading" class="loading">
+            טוען קהילות...
+        </div>
 
-        <button onclick="resetFilters()" class="reset-btn">
-            הצג הכל
-        </button>
+        <div id="communities-grid" class="communities-grid"></div>
+
+        <div id="no-results" class="no-results" style="display: none;">
+            לא נמצאו קהילות תואמות לחיפוש שלך.
+        </div>
+
     </div>
-
-    <!-- אזור טעינה -->
-    <div id="loading" class="loading">
-        טוען קהילות...
-    </div>
-
-    <!-- רשת כרטיסים -->
-    <div id="communities-grid" class="communities-grid">
-        <!-- נטען ע״י JS -->
-    </div>
-
-    <!-- אין תוצאות -->
-    <div id="no-results" class="no-results" style="display: none;">
-        לא נמצאו קהילות תואמות לחיפוש שלך.
-    </div>
-
 </div>
 
-<!-- JS -->
 <script src="communities.js"></script>
-
 </body>
 </html>
