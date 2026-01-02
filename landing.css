@@ -1,77 +1,83 @@
 /* =========================
-   LANDING PAGE – WAVES BACKGROUND (CSS ONLY)
+   LANDING – WAVES BACKGROUND
 ========================= */
 
-body {
-  background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
+.landing-root {
+    position: relative;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
 }
 
-/* HERO */
-.landing-hero {
-  min-height: calc(100vh - 80px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  position: relative;
-  overflow: hidden;
+/* =========================
+   WAVES GROUPS (CSS ONLY)
+========================= */
+.landing-root::before,
+.landing-root::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    pointer-events: none;
 }
 
-/* WAVES BACKGROUND */
-.landing-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900'>\
-<g fill='none' stroke='%232C80FF' stroke-width='3' opacity='0.25'>\
-<path d='M-200 150 C 200 100 400 200 700 180 1000 160 1200 260 1600 220'/>\
-<path d='M-200 260 C 300 220 500 320 800 300 1100 280 1300 360 1600 340'/>\
-<path d='M-200 380 C 250 350 550 430 850 410 1150 390 1350 470 1600 450'/>\
-<path d='M-200 520 C 300 480 600 560 900 540 1200 520 1400 600 1600 580'/>\
-<path d='M-200 660 C 350 620 650 700 950 680 1250 660 1450 740 1600 720'/>\
-</g></svg>");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
+/* קבוצה ראשונה – שמאל עליון */
+.landing-root::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 120 C 200 80, 400 160, 600 120 S 1000 160, 1200 120' fill='none' stroke='%232C80FF' stroke-width='6' stroke-opacity='0.25'/%3E%3Cpath d='M0 160 C 200 120, 400 200, 600 160 S 1000 200, 1200 160' fill='none' stroke='%232C80FF' stroke-width='6' stroke-opacity='0.18'/%3E%3Cpath d='M0 200 C 200 160, 400 240, 600 200 S 1000 240, 1200 200' fill='none' stroke='%232C80FF' stroke-width='6' stroke-opacity='0.12'/%3E%3C/svg%3E");
+    background-size: 1200px 300px;
+    background-position: -200px 80px;
 }
 
-/* CONTENT ABOVE WAVES */
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 720px;
+/* קבוצה שנייה – ימין תחתון, אלכסונית */
+.landing-root::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 140 C 250 100, 450 180, 650 140 S 1050 180, 1200 140' fill='none' stroke='%234FA3F7' stroke-width='7' stroke-opacity='0.22'/%3E%3Cpath d='M0 180 C 250 140, 450 220, 650 180 S 1050 220, 1200 180' fill='none' stroke='%234FA3F7' stroke-width='7' stroke-opacity='0.15'/%3E%3C/svg%3E");
+    background-size: 1200px 300px;
+    background-position: 400px 65%;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 16px;
+/* =========================
+   CONTENT
+========================= */
+.landing-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 560px;
+    padding: 20px;
 }
 
-.hero-content p {
-  font-size: 1.05rem;
-  color: #6b7280;
-  line-height: 1.6;
-  margin-bottom: 36px;
+.landing-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1f2937;
 }
 
-/* CTA */
+.landing-content p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* =========================
+   CTA
+========================= */
 .cta-btn {
-  background: #2C80FF;
-  color: white;
-  border: none;
-  padding: 16px 36px;
-  border-radius: 999px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 20px 40px rgba(44,128,255,0.25);
+    padding: 14px 36px;
+    border-radius: 999px;
+    border: none;
+    background: #2C80FF;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .cta-btn:hover {
-  background: #2563eb;
+    box-shadow: 0 0 0 4px rgba(44,128,255,0.25);
 }
