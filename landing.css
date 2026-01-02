@@ -1,136 +1,77 @@
-/* =================================================
-   LANDING PAGE – CoNet
-================================================= */
-
-:root {
-    --primary-blue: #2C80FF;
-    --text-main: #1f2937;
-    --text-muted: #6b7280;
-}
-
 /* =========================
-   HERO
+   LANDING PAGE – WAVES BACKGROUND (CSS ONLY)
 ========================= */
-.hero {
-    position: relative;
-    height: calc(100vh - 80px);
-    background: linear-gradient(180deg, #eef4ff 0%, #f6f9ff 100%);
-    overflow: hidden;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+body {
+  background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
 }
 
-/* =========================
-   FLOWING WAVES (TRUE WAVES)
-========================= */
-.hero::before,
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-repeat: repeat-x;
+/* HERO */
+.landing-hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Wave layer 1 */
-.hero::before {
-    background-image:
-        linear-gradient(
-            120deg,
-            rgba(44,128,255,0.28) 0%,
-            rgba(44,128,255,0.28) 6%,
-            transparent 6%,
-            transparent 12%
-        );
-    background-size: 180px 100%;
-    background-position-y: 35%;
-    animation: waveMove 20s linear infinite;
+/* WAVES BACKGROUND */
+.landing-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900'>\
+<g fill='none' stroke='%232C80FF' stroke-width='3' opacity='0.25'>\
+<path d='M-200 150 C 200 100 400 200 700 180 1000 160 1200 260 1600 220'/>\
+<path d='M-200 260 C 300 220 500 320 800 300 1100 280 1300 360 1600 340'/>\
+<path d='M-200 380 C 250 350 550 430 850 410 1150 390 1350 470 1600 450'/>\
+<path d='M-200 520 C 300 480 600 560 900 540 1200 520 1400 600 1600 580'/>\
+<path d='M-200 660 C 350 620 650 700 950 680 1250 660 1450 740 1600 720'/>\
+</g></svg>");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
 }
 
-/* Wave layer 2 */
-.hero::after {
-    background-image:
-        linear-gradient(
-            120deg,
-            rgba(44,128,255,0.18) 0%,
-            rgba(44,128,255,0.18) 5%,
-            transparent 5%,
-            transparent 11%
-        );
-    background-size: 240px 100%;
-    background-position-y: 55%;
-    animation: waveMoveReverse 28s linear infinite;
-}
-
-/* =========================
-   ANIMATIONS
-========================= */
-@keyframes waveMove {
-    from { background-position-x: 0; }
-    to   { background-position-x: 180px; }
-}
-
-@keyframes waveMoveReverse {
-    from { background-position-x: 0; }
-    to   { background-position-x: -240px; }
-}
-
-/* =========================
-   HERO CONTENT
-========================= */
+/* CONTENT ABOVE WAVES */
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 720px;
-    padding: 0 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 16px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 16px;
 }
 
 .hero-content p {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    margin-bottom: 36px;
-    line-height: 1.6;
+  font-size: 1.05rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 36px;
 }
 
 /* CTA */
-.hero-cta {
-    padding: 16px 42px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 999px;
-    border: none;
-    cursor: pointer;
-
-    background: var(--primary-blue);
-    color: white;
-
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+.cta-btn {
+  background: #2C80FF;
+  color: white;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(44,128,255,0.25);
 }
 
-.hero-cta:hover {
-    box-shadow: 0 10px 25px rgba(44,128,255,0.35);
-    transform: translateY(-2px);
-}
-
-.hero-cta:active {
-    transform: scale(0.97);
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.3rem;
-    }
+.cta-btn:hover {
+  background: #2563eb;
 }
