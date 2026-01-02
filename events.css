@@ -12,6 +12,17 @@
     --accent-green: #22c55e;
     --accent-gray: #9ca3af;
 }
+/* =========================
+   PAGE BASE
+========================= */
+body {
+    margin: 0;
+    direction: rtl;
+    color: var(--text-main);
+
+    /* 🔥 זה התיקון הקריטי */
+    min-height: 100vh;
+}
 
 /* =========================
    MAIN CONTAINER
