@@ -5,20 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>הקהילות של CoNet</title>
 
-    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Global CSS -->
     <link rel="stylesheet" href="auth.css">
-
-    <!-- Page specific CSS -->
     <link rel="stylesheet" href="communities.css">
 </head>
 <body>
 
-<!-- =========================
-     TOP NAVBAR (GLOBAL)
-========================= -->
 <header class="conet-navbar">
     <div class="conet-navbar-inner">
 
@@ -34,60 +26,31 @@
         </nav>
 
         <div class="conet-user">
-            <span class="conet-greeting" id="userGreeting">שלום, אורח</span>
-
-            <button
-                id="loginBtn"
-                class="conet-logout-btn"
-                onclick="window.location.href='login.html'">
-                התחברות
-            </button>
-
-            <button
-                id="logoutBtn"
-                class="conet-logout-btn"
-                onclick="logoutUser()">
-                התנתק
-            </button>
+            <span class="conet-greeting">שלום, אורח</span>
+            <button onclick="location.href='login.html'">התחברות</button>
         </div>
 
     </div>
 </header>
 
-<!-- =========================
-     PAGE CONTENT
-========================= -->
- <div class="main-container page-content">
+<div class="main-container">
 
-        <div class="filters-bar">
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="search-input"
-                    placeholder="חפש קהילה לפי שם או נושא..."
-                >
-            </div>
-
-            <button onclick="filterCommunities()" class="filter-btn">
-                חפש
-            </button>
-
-            <button onclick="resetFilters()" class="reset-btn">
-                הצג הכל
-            </button>
+    <div class="filters-bar">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="חפש קהילה לפי שם או נושא...">
         </div>
 
-        <div id="loading" class="loading">
-            טוען קהילות...
-        </div>
-
-        <div id="communities-grid" class="communities-grid"></div>
-
-        <div id="no-results" class="no-results" style="display: none;">
-            לא נמצאו קהילות תואמות לחיפוש שלך.
-        </div>
-
+        <button class="filter-btn" onclick="filterCommunities()">חפש</button>
+        <button class="reset-btn" onclick="resetFilters()">הצג הכל</button>
     </div>
+
+    <div id="loading" class="loading">טוען קהילות...</div>
+    <div id="communities-grid" class="communities-grid"></div>
+    <div id="no-results" class="no-results" style="display:none;">
+        לא נמצאו קהילות תואמות
+    </div>
+
+</div>
 
 <script src="communities.js"></script>
 </body>
