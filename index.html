@@ -16,9 +16,6 @@
 </head>
 <body>
 
-<!-- =========================
-     TOP NAVBAR (GUEST)
-========================= -->
 <header class="conet-navbar">
     <div class="conet-navbar-inner">
 
@@ -33,9 +30,7 @@
         </nav>
 
         <div class="conet-user">
-            <button
-                class="conet-logout-btn"
-                onclick="window.location.href='login.html'">
+            <button class="conet-logout-btn" onclick="window.location.href='login.html'">
                 התחברות
             </button>
         </div>
@@ -43,39 +38,35 @@
     </div>
 </header>
 
-<!-- =========================
-     HERO
-========================= -->
 <main class="landing-hero">
 
-    <!-- WAVES -->
-    <div class="waves">
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path d="M0,160 C240,220 480,100 720,120 960,140 1200,200 1440,160 L1440,0 L0,0 Z"></path>
-        </svg>
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path d="M0,180 C300,140 600,260 900,200 1200,140 1440,180 1440,180 L1440,0 L0,0 Z"></path>
+    <!-- WAVES BACKGROUND -->
+    <div class="wave-bg">
+        <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+            <path d="M0 200 C 300 180, 600 260, 900 220, 1200 180, 1440 210"
+                  class="wave wave1"/>
+            <path d="M0 320 C 300 300, 600 380, 900 340, 1200 300, 1440 330"
+                  class="wave wave2"/>
+            <path d="M0 460 C 300 440, 600 520, 900 480, 1200 440, 1440 470"
+                  class="wave wave3"/>
         </svg>
     </div>
 
-    <!-- CONTENT -->
     <div class="hero-inner">
         <h1>עובדים טוב יותר, ביחד</h1>
 
         <p class="hero-subtitle">
             פלטפורמה אחת שמחברת בין אנשים, קהילות ומרחבי עבודה –
-            למציאת שיתופי פעולה, אירועים וחללים שמתאימים בדיוק לך.
+            לשיתופי פעולה, אירועים וחיבורים אמיתיים.
         </p>
 
         <div class="hero-features">
-            <span>🔹 מציאת מרחבי עבודה</span>
-            <span>🔹 קהילות ונטוורקינג</span>
-            <span>🔹 אירועים ומפגשים</span>
+            <span>מציאת מרחבים</span>
+            <span>קהילות פעילות</span>
+            <span>אירועים משותפים</span>
         </div>
 
-        <button
-            class="primary-cta"
-            onclick="window.location.href='signup.html'">
+        <button class="primary-cta" onclick="window.location.href='signup.html'">
             הצטרפות ל-CoNet
         </button>
     </div>
