@@ -1,21 +1,21 @@
 :root {
     --blue-main: #2C80FF;
-    --blue-soft: rgba(44,128,255,0.25);
-    --blue-lighter: rgba(44,128,255,0.15);
+    --blue-strong: rgba(44,128,255,0.35);
+    --blue-soft: rgba(44,128,255,0.18);
     --text-main: #1f2937;
 }
 
 /* =========================
-   HERO LAYOUT
+   HERO
 ========================= */
 .hero {
     position: relative;
     height: calc(100vh - 80px);
+    background: linear-gradient(180deg, #eef4ff 0%, #f6f9ff 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(180deg, #eef4ff 0%, #f6f9ff 100%);
 }
 
 /* =========================
@@ -23,7 +23,7 @@
 ========================= */
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     text-align: center;
     max-width: 640px;
     padding: 0 20px;
@@ -59,7 +59,7 @@
 }
 
 /* =========================
-   WAVES (CSS ONLY)
+   WAVES – REAL WAVES
 ========================= */
 .waves {
     position: absolute;
@@ -68,75 +68,72 @@
     pointer-events: none;
 }
 
+/* בסיס לכל גל */
 .wave {
     position: absolute;
-    width: 140%;
-    height: 2px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--blue-soft),
-        transparent
-    );
-    opacity: 0.7;
-    animation: float 18s ease-in-out infinite;
+    width: 160%;
+    height: 120px;
+    border-radius: 1000px;
+    opacity: 0.6;
+    animation: waveMove 22s ease-in-out infinite;
 }
 
-/* Individual placement */
+/* גל עליון */
 .wave-1 {
-    top: 22%;
-    left: -20%;
-    animation-duration: 22s;
+    top: 18%;
+    left: -30%;
+    background: var(--blue-strong);
+    transform: rotate(-3deg);
 }
 
+/* גל שני – מקביל */
 .wave-2 {
-    top: 30%;
-    left: -10%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--blue-lighter),
-        transparent
-    );
-    animation-duration: 26s;
+    top: 24%;
+    left: -35%;
+    background: var(--blue-soft);
+    transform: rotate(-3deg);
+    animation-duration: 28s;
 }
 
+/* גל אמצעי */
 .wave-3 {
-    top: 48%;
+    top: 46%;
     left: -25%;
+    background: var(--blue-strong);
+    transform: rotate(2deg);
     animation-duration: 30s;
 }
 
+/* גל נוסף ליד */
 .wave-4 {
-    top: 62%;
-    left: -15%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--blue-lighter),
-        transparent
-    );
-    animation-duration: 24s;
-}
-
-.wave-5 {
-    top: 72%;
+    top: 52%;
     left: -30%;
+    background: var(--blue-soft);
+    transform: rotate(2deg);
     animation-duration: 34s;
 }
 
+/* גל תחתון */
+.wave-5 {
+    top: 70%;
+    left: -35%;
+    background: var(--blue-soft);
+    transform: rotate(-1deg);
+    animation-duration: 26s;
+}
+
 /* =========================
-   ANIMATION
+   ANIMATION – GLIDING WAVES
 ========================= */
-@keyframes float {
+@keyframes waveMove {
     0% {
-        transform: translateX(0) translateY(0);
+        transform: translateX(0) rotate(var(--r, 0deg));
     }
     50% {
-        transform: translateX(120px) translateY(-6px);
+        transform: translateX(180px) rotate(var(--r, 0deg));
     }
     100% {
-        transform: translateX(0) translateY(0);
+        transform: translateX(0) rotate(var(--r, 0deg));
     }
 }
 
@@ -144,11 +141,15 @@
    MOBILE
 ========================= */
 @media (max-width: 768px) {
+    .hero {
+        height: calc(100vh - 112px);
+    }
+
     .hero-content h1 {
         font-size: 2.1rem;
     }
 
-    .hero {
-        height: calc(100vh - 112px);
+    .wave {
+        height: 90px;
     }
 }
