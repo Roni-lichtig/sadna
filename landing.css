@@ -1,97 +1,148 @@
-/* =========================
-   LANDING – CoNet SaaS Style
-========================= */
+/* =================================================
+   LANDING PAGE – CoNet SaaS Style
+================================================= */
 
-body {
-    background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
+:root {
+    --primary-blue: #2C80FF;
+    --primary-hover: #2563eb;
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
 }
 
-/* עוטף מרכזי */
-.landing-wrapper {
-    height: calc(100vh - 80px); /* מתחת לבאנר */
+/* =========================
+   HERO LAYOUT
+========================= */
+.landing-hero {
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 24px;
-}
-
-/* כרטיס HERO */
-.hero-card {
-    background: #ffffff;
-    border-radius: 28px;
-    padding: 64px 56px;
-    max-width: 760px;
-    width: 100%;
     text-align: center;
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.06),
-        0 30px 60px rgba(79,163,247,0.15);
+    padding: 0 20px;
+    position: relative;
 }
 
-.hero-card h1 {
-    font-size: 2.4rem;
+/* =========================
+   CONTENT
+========================= */
+.hero-inner {
+    max-width: 760px;
+    z-index: 1;
+}
+
+.hero-inner h1 {
+    font-size: 2.6rem;
     font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 20px;
-    line-height: 1.25;
+    color: var(--text-dark);
+    margin-bottom: 16px;
 }
 
-.hero-subtext {
+.hero-inner p {
     font-size: 1.05rem;
-    color: #6b7280;
-    margin-bottom: 40px;
-    line-height: 1.6;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 36px;
 }
 
-/* כפתורי CTA */
+/* =========================
+   CTA BUTTONS
+========================= */
 .hero-actions {
     display: flex;
     gap: 16px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .primary-cta {
-    background: #2C80FF;
+    background: var(--primary-blue);
     color: white;
     border: none;
-    padding: 16px 36px;
+    padding: 14px 32px;
     border-radius: 999px;
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
 }
 
 .primary-cta:hover {
-    background: #2563eb;
+    background: var(--primary-hover);
 }
 
 .secondary-cta {
     background: white;
-    color: #2C80FF;
-    border: 1.5px solid rgba(44,128,255,0.4);
-    padding: 16px 32px;
+    color: var(--primary-blue);
+    border: 1.6px solid rgba(44,128,255,0.35);
+    padding: 14px 32px;
     border-radius: 999px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
 }
 
 .secondary-cta:hover {
     background: rgba(44,128,255,0.08);
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .hero-card {
-        padding: 48px 28px;
+/* =========================
+   WAVES BACKGROUND
+========================= */
+.with-waves {
+    overflow: hidden;
+}
+
+.waves-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.waves-bg span {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: -50%;
+    top: 60%;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(44,128,255,0.12),
+        rgba(44,128,255,0.03) 45%,
+        transparent 70%
+    );
+    border-radius: 45%;
+    animation: waveRotate 80s linear infinite;
+}
+
+.waves-bg span:nth-child(1) {
+    animation-duration: 100s;
+    opacity: 0.35;
+}
+
+.waves-bg span:nth-child(2) {
+    top: 65%;
+    animation-duration: 70s;
+    opacity: 0.25;
+}
+
+.waves-bg span:nth-child(3) {
+    top: 72%;
+    animation-duration: 120s;
+    opacity: 0.2;
+}
+
+@keyframes waveRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+    .hero-inner h1 {
+        font-size: 2.1rem;
     }
 
-    .hero-card h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-actions {
-        flex-direction: column;
+    .hero-inner p {
+        font-size: 0.95rem;
     }
 }
