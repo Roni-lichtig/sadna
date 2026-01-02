@@ -1,0 +1,97 @@
+/* =========================
+   LANDING – CoNet SaaS Style
+========================= */
+
+body {
+    background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
+}
+
+/* עוטף מרכזי */
+.landing-wrapper {
+    height: calc(100vh - 80px); /* מתחת לבאנר */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+/* כרטיס HERO */
+.hero-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 64px 56px;
+    max-width: 760px;
+    width: 100%;
+    text-align: center;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.06),
+        0 30px 60px rgba(79,163,247,0.15);
+}
+
+.hero-card h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
+
+.hero-subtext {
+    font-size: 1.05rem;
+    color: #6b7280;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* כפתורי CTA */
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.primary-cta {
+    background: #2C80FF;
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.primary-cta:hover {
+    background: #2563eb;
+}
+
+.secondary-cta {
+    background: white;
+    color: #2C80FF;
+    border: 1.5px solid rgba(44,128,255,0.4);
+    padding: 16px 32px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondary-cta:hover {
+    background: rgba(44,128,255,0.08);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero-card {
+        padding: 48px 28px;
+    }
+
+    .hero-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+}
