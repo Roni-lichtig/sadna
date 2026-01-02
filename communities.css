@@ -1,5 +1,9 @@
 /* =================================================
-   COMMUNITIES – CoNet FINAL FIX
+   COMMUNITIES – CoNet (WORKING WITH auth.css NAVBAR)
+   Fixes:
+   - no global button overrides (won't break navbar)
+   - consistent spacing under fixed banner
+   - centered, not-too-wide filters bar
 ================================================= */
 
 :root {
@@ -12,32 +16,39 @@
     --border-soft: #d1d9e6;
 }
 
-/* body padding-top מגיע מ-auth.css */
+/* ✅ Don't fight auth.css.
+   If auth.css is loaded -> it already sets padding-top.
+   If not, we still keep the page safe. */
 body {
     margin: 0;
-    background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    color: var(--text-main);
     direction: rtl;
+    color: var(--text-main);
+    background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
+    padding-top: 80px; /* safe fallback */
 }
 
 /* =========================
-   MAIN CONTAINER – FIX
+   MAIN CONTAINER
 ========================= */
 .main-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px 80px;
+    padding: 32px 20px 80px;
     width: 100%;
     box-sizing: border-box;
 }
 
 /* =========================
-   FILTERS BAR – CARD STYLE
+   FILTERS BAR (CENTERED CARD)
 ========================= */
 .filters-bar {
-    background: white;
-    padding: 24px;
+    width: 100%;
+    max-width: 980px;          /* ✅ prevents the "giant pill" */
+    margin: 0 auto 36px;       /* ✅ centered */
+    background: var(--card-bg);
+    padding: 22px 22px;
     border-radius: 24px;
+
     box-shadow:
         0 10px 25px rgba(0,0,0,0.06),
         0 30px 60px rgba(79,163,247,0.12);
@@ -47,14 +58,12 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
-    margin-bottom: 40px;
 }
 
 /* Search input */
 .search-box {
-    flex: 1 1 320px;
-    max-width: 420px;
+    flex: 1 1 360px;
+    max-width: 520px;
 }
 
 .search-box input {
@@ -62,7 +71,8 @@ body {
     padding: 12px 18px;
     border: 1px solid var(--border-soft);
     border-radius: 999px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    background: #ffffff;
 }
 
 .search-box input:focus {
@@ -71,30 +81,33 @@ body {
     box-shadow: 0 0 0 4px rgba(44,128,255,0.15);
 }
 
-/* =========================
-   BUTTONS – GLOBAL CoNet
-========================= */
-button {
+/* ✅ IMPORTANT: scope button styles only to this page content
+   so we don't break navbar buttons */
+.filters-bar button,
+.card-actions button {
     border: none;
     border-radius: 999px;
     padding: 12px 22px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: box-shadow 0.15s ease, transform 0.1s ease;
+    transition: box-shadow 0.15s ease, transform 0.1s ease, background 0.15s ease;
+    font-family: inherit;
 }
 
-button:hover {
+.filters-bar button:hover,
+.card-actions button:hover {
     box-shadow: 0 0 0 3px rgba(44,128,255,0.25);
 }
 
-button:active {
+.filters-bar button:active,
+.card-actions button:active {
     transform: scale(0.97);
 }
 
 .filter-btn {
     background: var(--primary-blue);
-    color: white;
+    color: #fff;
 }
 
 .filter-btn:hover {
@@ -102,19 +115,22 @@ button:active {
 }
 
 .reset-btn {
-    background: white;
+    background: #ffffff;
     border: 1.5px solid var(--border-soft);
     color: var(--text-main);
 }
 
+.reset-btn:hover {
+    background: rgba(44,128,255,0.06);
+}
+
 /* =========================
-   GRID – FIXED SPACING
+   GRID
 ========================= */
 .communities-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 28px;
-    margin-top: 10px;
+    gap: 26px;
 }
 
 /* =========================
@@ -124,20 +140,20 @@ button:active {
     background: var(--card-bg);
     border-radius: 22px;
     overflow: hidden;
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.06);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
     display: flex;
     flex-direction: column;
+    min-height: 320px;
 }
 
 .community-card:hover {
     transform: translateY(-4px);
-    box-shadow:
-        0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.10);
 }
 
-/* Image */
 .card-image {
     height: 170px;
     background-color: #e5ecfb;
@@ -157,17 +173,18 @@ button:active {
     margin: 0 0 6px 0;
     color: var(--primary-blue);
     font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .subject {
     font-weight: 600;
     color: var(--text-main);
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     margin-bottom: 4px;
 }
 
 .est-date {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
     margin-bottom: 14px;
 }
@@ -178,7 +195,7 @@ button:active {
 .card-actions {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     padding: 0 20px 20px;
 }
 
@@ -187,8 +204,6 @@ button:active {
     padding: 12px;
     background: var(--primary-blue);
     color: white;
-    border-radius: 999px;
-    font-weight: 600;
 }
 
 .join-btn:hover {
@@ -197,12 +212,10 @@ button:active {
 
 .chat-btn {
     width: 100%;
-    background: white;
+    background: #ffffff;
     color: var(--primary-blue);
-    border: 1.5px solid var(--primary-blue);
-    padding: 10px;
-    border-radius: 999px;
-    font-size: 0.8rem;
+    border: 1.5px solid rgba(44,128,255,0.45);
+    padding: 12px;
 }
 
 .chat-btn:hover {
@@ -217,7 +230,7 @@ button:active {
     text-align: center;
     font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 /* =========================
@@ -225,7 +238,15 @@ button:active {
 ========================= */
 @media (max-width: 600px) {
     .filters-bar {
-        flex-direction: column;
-        align-items: stretch;
+        padding: 18px;
+    }
+
+    .search-box {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .filters-bar button {
+        width: 100%;
     }
 }
