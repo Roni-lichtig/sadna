@@ -1,7 +1,7 @@
 :root {
-    --blue-main: #2C80FF;
-    --blue-strong: rgba(44,128,255,0.35);
-    --blue-soft: rgba(44,128,255,0.18);
+    --blue-1: rgba(44,128,255,0.35);
+    --blue-2: rgba(44,128,255,0.22);
+    --blue-3: rgba(44,128,255,0.15);
     --text-main: #1f2937;
 }
 
@@ -16,6 +16,44 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+/* =========================
+   WAVES – REAL WAVES
+========================= */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-repeat: repeat-x;
+    background-size: 1200px 400px;
+    animation: waveMove 40s linear infinite;
+}
+
+/* גל ראשון */
+.hero::before {
+    background-image:
+        repeating-radial-gradient(
+            circle at 50% 120%,
+            transparent 0 60px,
+            var(--blue-1) 62px 64px,
+            transparent 66px 120px
+        );
+    opacity: 0.9;
+}
+
+/* גל שני – מקביל */
+.hero::after {
+    background-image:
+        repeating-radial-gradient(
+            circle at 50% 130%,
+            transparent 0 80px,
+            var(--blue-2) 82px 84px,
+            transparent 86px 140px
+        );
+    animation-duration: 55s;
+    opacity: 0.8;
 }
 
 /* =========================
@@ -44,7 +82,7 @@
 }
 
 .hero-cta {
-    background: var(--blue-main);
+    background: #2C80FF;
     color: white;
     border: none;
     padding: 16px 42px;
@@ -59,81 +97,14 @@
 }
 
 /* =========================
-   WAVES – REAL WAVES
-========================= */
-.waves {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-}
-
-/* בסיס לכל גל */
-.wave {
-    position: absolute;
-    width: 160%;
-    height: 120px;
-    border-radius: 1000px;
-    opacity: 0.6;
-    animation: waveMove 22s ease-in-out infinite;
-}
-
-/* גל עליון */
-.wave-1 {
-    top: 18%;
-    left: -30%;
-    background: var(--blue-strong);
-    transform: rotate(-3deg);
-}
-
-/* גל שני – מקביל */
-.wave-2 {
-    top: 24%;
-    left: -35%;
-    background: var(--blue-soft);
-    transform: rotate(-3deg);
-    animation-duration: 28s;
-}
-
-/* גל אמצעי */
-.wave-3 {
-    top: 46%;
-    left: -25%;
-    background: var(--blue-strong);
-    transform: rotate(2deg);
-    animation-duration: 30s;
-}
-
-/* גל נוסף ליד */
-.wave-4 {
-    top: 52%;
-    left: -30%;
-    background: var(--blue-soft);
-    transform: rotate(2deg);
-    animation-duration: 34s;
-}
-
-/* גל תחתון */
-.wave-5 {
-    top: 70%;
-    left: -35%;
-    background: var(--blue-soft);
-    transform: rotate(-1deg);
-    animation-duration: 26s;
-}
-
-/* =========================
-   ANIMATION – GLIDING WAVES
+   ANIMATION
 ========================= */
 @keyframes waveMove {
-    0% {
-        transform: translateX(0) rotate(var(--r, 0deg));
+    from {
+        background-position-x: 0;
     }
-    50% {
-        transform: translateX(180px) rotate(var(--r, 0deg));
-    }
-    100% {
-        transform: translateX(0) rotate(var(--r, 0deg));
+    to {
+        background-position-x: 1200px;
     }
 }
 
@@ -147,9 +118,5 @@
 
     .hero-content h1 {
         font-size: 2.1rem;
-    }
-
-    .wave {
-        height: 90px;
     }
 }
