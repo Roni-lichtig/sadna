@@ -1,24 +1,16 @@
 /* =================================================
-   EVENTS – CoNet FINAL DESIGN
+   EVENTS – CoNet FINAL CSS (NO BODY BACKGROUND)
 ================================================= */
 
 :root {
     --primary-blue: #2C80FF;
     --primary-hover: #2563eb;
-    --bg-color: #f6f9ff;
     --card-bg: #ffffff;
     --text-main: #1f2937;
     --text-secondary: #6b7280;
     --border-soft: #d1d9e6;
     --accent-green: #22c55e;
-}
-
-/* ⚠️ body padding-top מגיע מ-auth.css */
-body {
-    margin: 0;
-    direction: rtl;
-    background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    color: var(--text-main);
+    --accent-gray: #9ca3af;
 }
 
 /* =========================
@@ -28,8 +20,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 20px 80px;
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
 }
 
 /* =========================
@@ -48,7 +40,6 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
     margin-bottom: 40px;
 }
 
@@ -61,9 +52,9 @@ body {
 .search-box input {
     width: 100%;
     padding: 12px 18px;
-    border-radius: 999px;
     border: 1px solid var(--border-soft);
-    font-size: 0.9rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
 }
 
 .search-box input:focus {
@@ -72,16 +63,17 @@ body {
     box-shadow: 0 0 0 4px rgba(44,128,255,0.15);
 }
 
-/* Date */
+/* Date filter */
 .date-filter {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 0.85rem;
+    color: var(--text-main);
 }
 
 .date-filter input {
-    padding: 10px 14px;
+    padding: 10px 16px;
     border-radius: 999px;
     border: 1px solid var(--border-soft);
 }
@@ -89,21 +81,24 @@ body {
 /* =========================
    BUTTONS – CoNet STYLE
 ========================= */
-.filters-bar button {
+.filters-bar button,
+.card-actions button {
     border: none;
     border-radius: 999px;
     padding: 12px 22px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: box-shadow 0.15s ease, transform 0.1s ease;
 }
 
-.filters-bar button:hover {
+.filters-bar button:hover,
+.card-actions button:hover {
     box-shadow: 0 0 0 3px rgba(44,128,255,0.25);
 }
 
-.filters-bar button:active {
+.filters-bar button:active,
+.card-actions button:active {
     transform: scale(0.97);
 }
 
@@ -131,7 +126,7 @@ body {
 ========================= */
 .events-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 28px;
 }
 
@@ -155,7 +150,7 @@ body {
 
 /* Image */
 .card-image {
-    height: 160px;
+    height: 170px;
     background-color: #e5ecfb;
     background-size: cover;
     background-position: center;
@@ -169,7 +164,7 @@ body {
     right: 12px;
     background: rgba(44,128,255,0.9);
     color: white;
-    padding: 6px 14px;
+    padding: 6px 12px;
     border-radius: 999px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -186,10 +181,11 @@ body {
 .card-content h3 {
     margin: 0 0 10px;
     color: var(--primary-blue);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
+/* Info rows */
 .info-row {
     display: flex;
     align-items: center;
@@ -199,28 +195,29 @@ body {
     color: var(--text-secondary);
 }
 
+/* Participants */
 .participants-count {
     margin-top: auto;
     padding-top: 14px;
     font-size: 0.8rem;
     color: var(--text-secondary);
-    border-top: 1px solid #eef2f7;
+    border-top: 1px solid #eef2ff;
 }
 
 /* =========================
-   REGISTER BUTTON
+   CARD ACTIONS
 ========================= */
+.card-actions {
+    padding: 0 20px 20px;
+}
+
 .register-btn {
     width: 100%;
-    margin-top: 16px;
     padding: 12px;
-    border-radius: 999px;
     background: var(--accent-green);
     color: white;
+    border-radius: 999px;
     font-weight: 600;
-    font-size: 0.9rem;
-    border: none;
-    cursor: pointer;
 }
 
 .register-btn:hover {
@@ -228,7 +225,7 @@ body {
 }
 
 .register-btn.full {
-    background: #9ca3af;
+    background: var(--accent-gray);
     cursor: not-allowed;
 }
 
@@ -240,7 +237,7 @@ body {
     text-align: center;
     font-size: 0.95rem;
     color: var(--text-secondary);
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 /* =========================
