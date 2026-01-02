@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoNet – עובדים, לומדים, יוצרים יחד</title>
+    <title>CoNet – פלטפורמה לקהילות ומרחבי עבודה</title>
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Global CSS (כולל הבאנר) -->
+    <!-- Global CSS -->
     <link rel="stylesheet" href="auth.css">
 
-    <!-- Page CSS -->
+    <!-- Landing CSS -->
     <link rel="stylesheet" href="landing.css">
 </head>
 <body>
 
 <!-- =========================
-     TOP NAVBAR – GUEST
+     TOP NAVBAR – SAME AS SITE
 ========================= -->
 <header class="conet-navbar">
     <div class="conet-navbar-inner">
@@ -27,10 +27,10 @@
         </div>
 
         <nav class="conet-nav-links">
-            <a href="#" class="active">בית</a>
-            <a href="communities.html">קהילות</a>
-            <a href="search.html">מרחבים</a>
-            <a href="events.html">אירועים</a>
+            <a href="communities.html">הקהילות של CoNet</a>
+            <a href="search.html">המרחבים של CoNet</a>
+            <a href="events.html">האירועים של CoNet</a>
+            <a href="profile.html">הפרופיל שלי</a>
         </nav>
 
         <div class="conet-user">
@@ -43,31 +43,49 @@
 </header>
 
 <!-- =========================
-     HERO SECTION
+     HERO
 ========================= -->
-<main class="landing-wrapper">
+<main class="landing-hero">
 
-    <section class="hero-card">
-        <h1>
-            CoNet מחברת בין אנשים,<br>
-            קהילות ומרחבי עבודה
-        </h1>
+    <div class="hero-inner">
 
-        <p class="hero-subtext">
-            פלטפורמה אחת למציאת מרחבי עבודה, יצירת קהילות,
-            ניהול אירועים ושיתוף פעולה – במקום אחד.
-        </p>
+        <!-- TEXT -->
+        <div class="hero-text">
+            <span class="hero-eyebrow">העתיד של עבודה קהילתית</span>
 
-        <div class="hero-actions">
-            <button class="primary-cta" onclick="location.href='signup.html'">
-                הצטרפו עכשיו
-            </button>
+            <h1>
+                מצאו מרחבים.<br>
+                בנו קהילות.<br>
+                צרו חיבורים.
+            </h1>
 
-            <button class="secondary-cta" onclick="location.href='login.html'">
-                כבר יש לי חשבון
-            </button>
+            <p>
+                CoNet היא פלטפורמה חכמה שמחברת בין אנשים,
+                קהילות ומרחבי עבודה — לניהול אירועים,
+                עבודה משותפת וחיזוק קהילתיות.
+            </p>
+
+            <div class="hero-actions">
+                <button class="primary-cta" onclick="location.href='signup.html'">
+                    התחילו עכשיו
+                </button>
+
+                <button class="secondary-cta" onclick="location.href='login.html'">
+                    כבר יש לי חשבון
+                </button>
+            </div>
         </div>
-    </section>
+
+        <!-- VISUAL -->
+        <div class="hero-visual">
+            <div class="visual-card">
+                <span>📍 מרחבים זמינים</span>
+                <span>👥 קהילות פעילות</span>
+                <span>📅 אירועים מנוהלים</span>
+            </div>
+        </div>
+
+    </div>
 
 </main>
 
