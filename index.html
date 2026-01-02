@@ -8,10 +8,10 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Global CSS (banner וכו') -->
+    <!-- Global CSS -->
     <link rel="stylesheet" href="auth.css">
 
-    <!-- Landing page CSS -->
+    <!-- Landing CSS -->
     <link rel="stylesheet" href="landing.css">
 </head>
 <body>
@@ -44,33 +44,40 @@
 </header>
 
 <!-- =========================
-     HERO SECTION
+     HERO
 ========================= -->
-<main class="landing-hero with-waves">
+<main class="landing-hero">
 
-    <!-- רקע גלים -->
-    <div class="waves-bg">
-        <span></span>
-        <span></span>
-        <span></span>
+    <!-- WAVES -->
+    <div class="waves">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path d="M0,160 C240,220 480,100 720,120 960,140 1200,200 1440,160 L1440,0 L0,0 Z"></path>
+        </svg>
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path d="M0,180 C300,140 600,260 900,200 1200,140 1440,180 1440,180 L1440,0 L0,0 Z"></path>
+        </svg>
     </div>
 
-    <!-- תוכן -->
+    <!-- CONTENT -->
     <div class="hero-inner">
-        <h1>מוצאים. נפגשים. עובדים ביחד.</h1>
-        <p>
-            CoNet מחברת בין אנשים, קהילות ומרחבי עבודה –  
-            כדי שתוכלו לעבוד, ללמוד ולהיפגש בדרך שמתאימה לכם.
+        <h1>עובדים טוב יותר, ביחד</h1>
+
+        <p class="hero-subtitle">
+            פלטפורמה אחת שמחברת בין אנשים, קהילות ומרחבי עבודה –
+            למציאת שיתופי פעולה, אירועים וחללים שמתאימים בדיוק לך.
         </p>
 
-        <div class="hero-actions">
-            <button onclick="window.location.href='signup.html'" class="primary-cta">
-                הצטרפות ל-CoNet
-            </button>
-            <button onclick="window.location.href='search.html'" class="secondary-cta">
-                חיפוש מרחבים
-            </button>
+        <div class="hero-features">
+            <span>🔹 מציאת מרחבי עבודה</span>
+            <span>🔹 קהילות ונטוורקינג</span>
+            <span>🔹 אירועים ומפגשים</span>
         </div>
+
+        <button
+            class="primary-cta"
+            onclick="window.location.href='signup.html'">
+            הצטרפות ל-CoNet
+        </button>
     </div>
 
 </main>
