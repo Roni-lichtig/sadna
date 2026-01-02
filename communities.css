@@ -14,18 +14,19 @@
 
 /* =========================
    BODY & GLOBAL
+   ⚠️ חשוב: padding-top מנוהל ב-auth.css
 ========================= */
 body {
     margin: 0;
     direction: rtl;
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
     color: var(--text-main);
-    padding-top: 80px; /* חשוב – תואם לגובה הבאנר */
 }
 
 .page-content {
     width: 100%;
 }
+
 /* =========================
    MAIN CONTAINER (מתחת לבאנר)
 ========================= */
@@ -42,7 +43,6 @@ body {
 ========================= */
 .filters-bar {
     width: 100%;
-    margin-top: 14px; /* תיקון חשוב */
     background: var(--card-bg);
     padding: 20px;
     border-radius: 24px;
@@ -55,6 +55,8 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+
+    margin-bottom: 24px;
 }
 
 /* INPUT */
@@ -93,6 +95,11 @@ body {
 .filters-bar button:hover,
 .card-actions button:hover {
     box-shadow: 0 0 0 3px rgba(44,128,255,0.25);
+}
+
+.filters-bar button:active,
+.card-actions button:active {
+    transform: scale(0.97);
 }
 
 .filter-btn {
