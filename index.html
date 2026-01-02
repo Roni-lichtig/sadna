@@ -1,96 +1,13 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CoNet – עובדים טוב יותר, ביחד</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoNet</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="auth.css">
-
-<style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg, #eef4ff 0%, #f6f9ff 100%);
-    overflow: hidden;
-}
-
-/* HERO */
-.hero {
-    height: calc(100vh - 80px);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* CONTENT */
-.hero-content {
-    position: relative;
-    z-index: 5;
-    max-width: 720px;
-    padding: 0 20px;
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    color: #1f2937;
-    margin-bottom: 14px;
-}
-
-.hero-content p {
-    font-size: 1.05rem;
-    color: #6b7280;
-    line-height: 1.6;
-    margin-bottom: 36px;
-}
-
-.hero-content button {
-    background: #2C80FF;
-    color: white;
-    border: none;
-    border-radius: 999px;
-    padding: 16px 44px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.hero-content button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(44,128,255,.35);
-}
-
-/* WAVES */
-#waves {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-}
-
-#waves svg {
-    width: 120%;
-    height: 120%;
-    position: absolute;
-    top: -10%;
-    left: -10%;
-}
-
-.wave {
-    fill: none;
-    stroke: rgba(44,128,255,0.25);
-    stroke-width: 2.5;
-}
-
-.wave.soft {
-    stroke: rgba(44,128,255,0.15);
-    stroke-width: 2;
-}
-</style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="landing.css">
 </head>
 
 <body>
@@ -100,41 +17,34 @@ body {
     <div class="conet-logo">
       <img src="conetnew_logo.jpg" alt="CoNet">
     </div>
+
     <nav class="conet-nav-links">
-      <a href="search.html">המרחבים של CoNet</a>
       <a href="communities.html">הקהילות של CoNet</a>
+      <a href="search.html">המרחבים של CoNet</a>
       <a href="events.html">האירועים של CoNet</a>
     </nav>
+
     <div class="conet-user">
-      <button onclick="location.href='login.html'">התחברות</button>
+      <button class="conet-logout-btn" onclick="location.href='login.html'">
+        התחברות
+      </button>
     </div>
   </div>
 </header>
 
-<main class="hero">
-
-<div id="waves">
-<svg viewBox="0 0 1200 800" preserveAspectRatio="none">
-    <path id="w1" class="wave" d="M-200 300 C 200 200, 400 400, 700 300, 1000 200, 1400 350"/>
-    <path id="w2" class="wave soft" d="M-200 360 C 250 260, 500 480, 820 360, 1100 280, 1500 420"/>
-    <path id="w3" class="wave" d="M-200 430 C 220 340, 520 520, 880 430, 1200 360, 1600 500"/>
-    <path id="w4" class="wave soft" d="M-200 520 C 300 420, 620 600, 980 520, 1350 460, 1700 620"/>
-</svg>
-</div>
-
-<div class="hero-content">
+<section class="landing-hero">
+  <div class="hero-content">
     <h1>עובדים טוב יותר, ביחד</h1>
     <p>
-        פלטפורמה אחת שמחברת בין אנשים, קהילות ומרחבי עבודה –
-        לשיתופי פעולה, אירועים וחיבורים אמיתיים.
+      פלטפורמה אחת שמחברת בין אנשים, קהילות ומרחבי עבודה –
+      לשיתופי פעולה, אירועים וחיבורים אמיתיים.
     </p>
-    <button onclick="location.href='login.html'">
-        התחברות ל-CoNet
+
+    <button class="cta-btn" onclick="location.href='login.html'">
+      התחברות ל-CoNet
     </button>
-</div>
+  </div>
+</section>
 
-</main>
-
-<script src="landing-waves.js"></script>
 </body>
 </html>
