@@ -14,20 +14,31 @@
     --bg-white: #ffffff;
 }
 
+/* =========================
+   GLOBAL SAFETY
+========================= */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BODY
+========================= */
 body {
     margin: 0;
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    padding-top: 80px;
+    padding-top: 80px; /* נשאר כמו במקור */
 }
 
 /* =========================
    PAGE WRAPPER
 ========================= */
 .auth-wrapper {
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 32px 16px;
 }
 
@@ -48,10 +59,13 @@ body {
         0 30px 60px rgba(79,163,247,0.12);
     display: flex;
     flex-direction: column;
-    min-height: 600px;
     gap: 6px;
+    max-width: 100%;
 }
 
+/* =========================
+   TITLES
+========================= */
 .auth-heading {
     font-size: 1.7rem;
     font-weight: 700;
@@ -83,6 +97,7 @@ label {
     padding: 12px 16px;
     border: 1px solid var(--border-soft);
     font-size: 0.95rem;
+    margin-bottom: 18px;
 }
 
 .form-control:focus {
@@ -92,7 +107,7 @@ label {
 }
 
 /* =========================
-   BUTTONS – GLOBAL
+   BUTTONS – GLOBAL (ORIGINAL)
 ========================= */
 button,
 .auth-btn,
@@ -142,7 +157,7 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – FINAL
+   TOP NAVBAR – ORIGINAL (RESTORED)
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -166,38 +181,21 @@ button:active {
     align-items: center;
 }
 
-/* SHARED */
-.conet-logo,
-.conet-nav-links,
-.conet-user {
-    height: 48px;
-    display: flex;
-    align-items: center;
-}
-
 /* LOGO */
 .conet-logo {
     justify-self: end;
-}
-
-.conet-logo a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
 }
 
 .conet-logo img {
     height: 100px;
-    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.conet-logo a:hover img {
-    opacity: 0.92;
-    transform: translateY(-1px);
-}
-
-/* NAV */
+/* NAV BUTTONS – לא נוגעים */
 .conet-nav-links {
     justify-self: center;
+    display: flex;
     gap: 16px;
 }
 
@@ -211,23 +209,20 @@ button:active {
     font-weight: 600;
     color: var(--text-dark);
     text-decoration: none;
-    border-radius: 999px;
-    background: rgba(44,128,255,0.07);
-    border: 1.4px solid rgba(44,128,255,0.22);
-}
-
-.conet-nav-links a:hover {
-    background: rgba(44,128,255,0.12);
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid #6b7280;
 }
 
 .conet-nav-links a.active {
-    background: rgba(44,128,255,0.2);
-    border-color: var(--primary-blue);
+    border-color: var(--text-dark);
 }
 
 /* USER */
 .conet-user {
     justify-self: start;
+    display: flex;
+    align-items: center;
     gap: 12px;
 }
 
@@ -237,7 +232,7 @@ button:active {
 }
 
 /* =================================================
-   MOBILE – FIXED (NEW, SAFE)
+   MOBILE – LAYOUT ONLY (NO STYLE BREAK)
 ================================================= */
 @media (max-width: 768px) {
 
@@ -245,24 +240,12 @@ button:active {
         padding-top: 120px;
     }
 
-    .conet-navbar {
-        height: auto;
-        padding: 12px 0;
-    }
-
     .conet-navbar-inner {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 12px;
         padding: 0 16px;
-    }
-
-    .conet-logo {
-        justify-content: center;
-    }
-
-    .conet-logo img {
-        height: 64px;
     }
 
     .conet-nav-links {
@@ -273,19 +256,17 @@ button:active {
 
     .conet-nav-links a {
         width: auto;
-        padding: 8px 14px;
+        padding: 6px 12px;
         font-size: 0.8rem;
     }
 
     .conet-user {
         justify-content: center;
-        gap: 8px;
     }
 }
 
 @media (max-width: 480px) {
     .auth-card {
         padding: 28px 22px 32px;
-        min-height: 620px;
     }
 }
