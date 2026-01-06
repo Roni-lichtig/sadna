@@ -189,6 +189,25 @@ button:active {
     width: auto;
 }
 
+/* =================================================
+   LOGO HOVER – SAFE & SUBTLE (NEW)
+   ✔ affects only logo image
+   ✔ no layout changes
+================================================= */
+.conet-logo a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.conet-logo img {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.conet-logo a:hover img {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
 /* =========================
    NAV – TRUE CENTER, FIXED WIDTH
 ========================= */
