@@ -8,14 +8,15 @@
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Global CSS -->
+  <!-- Global Design (banner + auth layout) -->
   <link rel="stylesheet" href="auth.css">
 </head>
 
 <body>
 
 <!-- =========================
-     TOP NAVBAR – AUTH PAGE
+     TOP NAVBAR – LOGIN PAGE
+     (NO AUTH STATE HERE)
 ========================= -->
 <header class="conet-navbar">
   <div class="conet-navbar-inner">
@@ -27,14 +28,14 @@
       </a>
     </div>
 
-    <!-- NAV (אפשר להשאיר או לצמצם – השארתי כמו שביקשת) -->
+    <!-- NAV -->
     <nav class="conet-nav-links">
       <a href="communities.html">הקהילות של CoNet</a>
       <a href="search.html">המרחבים של CoNet</a>
       <a href="events.html">האירועים של CoNet</a>
     </nav>
 
-    <!-- AUTH ACTION -->
+    <!-- ONLY SIGNUP CTA -->
     <div class="conet-user">
       <button
         class="conet-logout-btn"
@@ -93,10 +94,12 @@
       </p>
 
     </div>
+
   </div>
 </div>
 
-<!-- AUTH LOGIC -->
+<!-- LOGIN LOGIC ONLY -->
 <script src="auth.js"></script>
+
 </body>
 </html>
