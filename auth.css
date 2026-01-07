@@ -17,7 +17,7 @@
 body {
     margin: 0;
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    padding-top: 80px; /* דסקטופ – ללא שינוי */
+    padding-top: 80px; /* תואם לגובה הבאנר */
 }
 
 /* =========================
@@ -142,7 +142,7 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – DESKTOP (UNCHANGED)
+   TOP NAVBAR – FINAL, CENTERED & CLEAN
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -151,6 +151,7 @@ button:active {
     left: 0;
     height: 80px;
     z-index: 1000;
+
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(8px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.06);
@@ -161,11 +162,15 @@ button:active {
     margin: 0 auto;
     height: 100%;
     padding: 0 48px;
+
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
 }
 
+/* =========================
+   SHARED VERTICAL ALIGN
+========================= */
 .conet-logo,
 .conet-nav-links,
 .conet-user {
@@ -174,6 +179,7 @@ button:active {
     align-items: center;
 }
 
+/* LOGO – RIGHT */
 .conet-logo {
     justify-self: end;
 }
@@ -183,6 +189,9 @@ button:active {
     width: auto;
 }
 
+/* =========================
+   NAV – TRUE CENTER, FIXED WIDTH
+========================= */
 .conet-nav-links {
     justify-self: center;
     gap: 16px;
@@ -191,71 +200,103 @@ button:active {
 .conet-nav-links a {
     width: 180px;
     height: 36px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     white-space: nowrap;
+    line-height: 1;
+
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-dark);
     text-decoration: none;
+
     border-radius: 999px;
     background: rgba(44,128,255,0.07);
     border: 1.4px solid rgba(44,128,255,0.22);
+
+    transition: background 0.15s ease,
+                border-color 0.15s ease,
+                color 0.15s ease;
 }
 
+.conet-nav-links a:hover {
+    background: rgba(44,128,255,0.12);
+    border-color: rgba(44,128,255,0.4);
+    color: var(--primary-blue);
+}
+
+.conet-nav-links a.active {
+    background: rgba(44,128,255,0.2);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+/* =========================
+   USER AREA – LEFT
+========================= */
 .conet-user {
     justify-self: start;
     gap: 12px;
 }
 
+.conet-greeting {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.conet-user button:first-of-type {
+    background: var(--primary-blue);
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+.conet-logout-btn {
+    background: #ffffff;
+    border: 1.6px solid #9ca3af;
+    color: #374151;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+}
+
 /* =================================================
-   MOBILE – FIXED, COMPACT, SAFE
+   MOBILE
 ================================================= */
 @media (max-width: 768px) {
-
-    /* ⬅️ הבאנר כבר לא חצי מסך */
     body {
-        padding-top: 88px;
+        padding-top: 112px;
     }
 
     .conet-navbar {
-        height: auto;
-        padding: 10px 0;
+        height: 112px;
     }
 
     .conet-navbar-inner {
         grid-template-columns: 1fr;
-        row-gap: 8px;
+        row-gap: 12px;
         justify-items: center;
-        padding: 0 16px;
     }
 
-    /* לוגו קטן יותר */
-    .conet-logo img {
-        height: 56px;
-    }
-
-    /* קישורים – צפופים אבל אותו עיצוב */
     .conet-nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
     }
 
     .conet-nav-links a {
         width: auto;
-        height: auto;
-        padding: 6px 14px;
-        font-size: 0.8rem;
+        padding: 8px 16px;
     }
 
-    /* אזור משתמש – לא דורס */
-    .conet-user {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        font-size: 0.8rem;
+    .conet-user,
+    .conet-logo {
+        justify-self: center;
     }
 }
 
