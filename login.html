@@ -6,16 +6,7 @@
   <title>CoNet – התחברות</title>
 
   <!-- Font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- Bootstrap CSS (UTILITIES ONLY – loaded BEFORE your CSS) -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Global Design (banner + auth layout) -->
   <link rel="stylesheet" href="auth.css">
@@ -25,27 +16,27 @@
 
 <!-- =========================
      TOP NAVBAR – LOGIN PAGE
-     ORIGINAL DESIGN, BOOTSTRAP FOR LAYOUT ONLY
+     (NO AUTH STATE HERE)
 ========================= -->
 <header class="conet-navbar">
-  <div class="conet-navbar-inner d-flex align-items-center justify-content-between flex-wrap">
+  <div class="conet-navbar-inner">
 
-    <!-- LOGO (Right) -->
-    <div class="conet-logo order-2 order-md-3">
+    <!-- LOGO -->
+    <div class="conet-logo">
       <a href="index.html">
         <img src="conetnew_logo.jpg" alt="CoNet">
       </a>
     </div>
 
-    <!-- NAV (Center on desktop, wraps naturally on mobile) -->
-    <nav class="conet-nav-links d-flex gap-2 flex-wrap justify-content-center order-3 order-md-2 w-100 w-md-auto mt-2 mt-md-0">
+    <!-- NAV -->
+    <nav class="conet-nav-links">
       <a href="communities.html">הקהילות של CoNet</a>
       <a href="search.html">המרחבים של CoNet</a>
       <a href="events.html">האירועים של CoNet</a>
     </nav>
 
-    <!-- SIGNUP CTA (Left) -->
-    <div class="conet-user order-1 order-md-1">
+    <!-- ONLY SIGNUP CTA -->
+    <div class="conet-user">
       <button
         class="conet-logout-btn"
         onclick="window.location.href='signup.html'">
