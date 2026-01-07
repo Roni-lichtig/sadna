@@ -17,7 +17,7 @@
 body {
     margin: 0;
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    padding-top: 80px; /* תואם לגובה הבאנר */
+    padding-top: 80px; /* גובה באנר בדסקטופ */
 }
 
 /* =========================
@@ -142,7 +142,7 @@ button:active {
 }
 
 /* =================================================
-   TOP NAVBAR – FINAL, CENTERED & CLEAN
+   TOP NAVBAR – DESKTOP ONLY (LOCKED)
 ================================================= */
 .conet-navbar {
     position: fixed;
@@ -190,7 +190,7 @@ button:active {
 }
 
 /* =========================
-   NAV – TRUE CENTER, FIXED WIDTH
+   NAV – CENTER
 ========================= */
 .conet-nav-links {
     justify-self: center;
@@ -264,45 +264,4 @@ button:active {
     padding: 8px 16px;
     border-radius: 999px;
     font-size: 0.8rem;
-}
-
-/* =================================================
-   MOBILE
-================================================= */
-@media (max-width: 768px) {
-    body {
-        padding-top: 112px;
-    }
-
-    .conet-navbar {
-        height: 112px;
-    }
-
-    .conet-navbar-inner {
-        grid-template-columns: 1fr;
-        row-gap: 12px;
-        justify-items: center;
-    }
-
-    .conet-nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .conet-nav-links a {
-        width: auto;
-        padding: 8px 16px;
-    }
-
-    .conet-user,
-    .conet-logo {
-        justify-self: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .auth-card {
-        padding: 28px 22px 32px;
-        min-height: 620px;
-    }
 }
