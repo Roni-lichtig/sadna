@@ -17,7 +17,7 @@
 body {
     margin: 0;
     background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    padding-top: 80px; /* תואם לגובה הבאנר */
+    padding-top: 80px; /* תואם לגובה הבאנר בדסקטופ */
 }
 
 /* =========================
@@ -266,43 +266,109 @@ button:active {
     font-size: 0.8rem;
 }
 
+/* =========================
+   MOBILE TOGGLE BUTTON (NEW – MOBILE ONLY)
+========================= */
+.conet-nav-toggle {
+    display: none; /* דסקטופ: לא קיים */
+    background: rgba(44,128,255,0.07);
+    border: 1.4px solid rgba(44,128,255,0.22);
+    color: var(--text-dark);
+    width: 42px;
+    height: 36px;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 0;
+}
+
 /* =================================================
-   MOBILE
+   MOBILE (FIXED)
+   - keeps logo right, user left
+   - nav opens as overlay (no content push)
 ================================================= */
 @media (max-width: 768px) {
+
+    /* הבאנר נשאר קומפקטי ויציב -> לא דורס עמודים */
     body {
-        padding-top: 112px;
+        padding-top: 72px;
     }
 
     .conet-navbar {
-        height: 112px;
+        height: 72px;
     }
 
     .conet-navbar-inner {
-        grid-template-columns: 1fr;
-        row-gap: 12px;
-        justify-items: center;
+        padding: 0 16px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 72px;
+        align-items: center;
     }
 
-    .conet-nav-links {
-        flex-wrap: wrap;
+    /* לוגו ימין למעלה */
+    .conet-logo {
+        justify-self: end;
+    }
+
+    .conet-logo img {
+        height: 56px;
+    }
+
+    /* user שמאל למעלה */
+    .conet-user {
+        justify-self: start;
+        gap: 10px;
+    }
+
+    /* כפתור המבורגר מופיע */
+    .conet-nav-toggle {
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
     }
 
+    /* הניווט לא תופס מקום בבאנר (overlay) */
+    .conet-nav-links {
+        position: fixed;
+        top: 72px;
+        right: 0;
+        left: 0;
+        height: auto;
+
+        padding: 14px 16px 16px;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 14px 35px rgba(0,0,0,0.14);
+
+        display: flex;         /* חשוב: Bootstrap collapse עובד על display, אבל אנחנו שומרים מבנה */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+
+        z-index: 1001;
+    }
+
+    /* כשה-collapse סגור, Bootstrap שם display:none; אנחנו לא צריכים לגעת בזה */
+
     .conet-nav-links a {
         width: auto;
-        padding: 8px 16px;
+        height: auto;
+        padding: 8px 14px;
+        font-size: 0.82rem;
     }
 
-    .conet-user,
-    .conet-logo {
-        justify-self: center;
-    }
+    /* כדי שהתוכן של הדף לא "יקפוץ" כשפותחים תפריט – הוא overlay ולא דוחף */
 }
 
+/* מובייל קטן */
 @media (max-width: 480px) {
     .auth-card {
         padding: 28px 22px 32px;
         min-height: 620px;
+    }
+
+    .conet-nav-links a {
+        padding: 8px 12px;
+        font-size: 0.8rem;
     }
 }
