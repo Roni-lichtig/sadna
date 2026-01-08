@@ -1,6 +1,5 @@
 /* =================================================
-   FINAL MOBILE DESIGN – CONET
-   Desktop is untouched. This file is MOBILE ONLY.
+   FINAL MOBILE NAV – BUTTONS ALWAYS VISIBLE
 ================================================= */
 
 @media (max-width: 768px) {
@@ -9,7 +8,7 @@
        BODY OFFSET
     ========================= */
     body {
-        padding-top: 96px; /* מתאים לבאנר 2 שורות */
+        padding-top: 140px; /* לוגו + שורת כפתורים */
     }
 
     /* =========================
@@ -17,7 +16,7 @@
     ========================= */
     .conet-navbar {
         height: auto;
-        padding: 8px 0 10px;
+        padding: 10px 0 12px;
     }
 
     .conet-navbar-inner {
@@ -25,64 +24,55 @@
         padding: 0 16px;
 
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        row-gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        row-gap: 12px;
         align-items: center;
+        justify-items: center;
     }
 
     /* =========================
-       TOP ROW
+       LOGO – TOP
     ========================= */
-
-    /* Logo – right */
     .conet-logo {
-        grid-column: 2 / 3;
         grid-row: 1 / 2;
-        justify-self: end;
+        justify-self: center;
     }
 
     .conet-logo img {
-        height: 52px;
-    }
-
-    /* User / signup – left */
-    .conet-user {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        justify-self: start;
-        gap: 8px;
+        height: 56px;
     }
 
     /* =========================
-       NAV – SECOND ROW (SCROLL)
+       NAV BUTTONS – MIDDLE
     ========================= */
     .conet-nav-links {
-        grid-column: 1 / 3;
         grid-row: 2 / 3;
 
         display: flex;
-        flex-wrap: nowrap;          /* קריטי */
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-
+        flex-wrap: wrap;          /* כן wrap – אבל בצורה נשלטת */
+        justify-content: center;
         gap: 10px;
-        padding-bottom: 4px;
-    }
-
-    /* hide scrollbar */
-    .conet-nav-links::-webkit-scrollbar {
-        height: 0;
+        width: 100%;
     }
 
     .conet-nav-links a {
-        flex: 0 0 auto;
         width: auto;
-        height: 34px;
+        min-width: 140px;         /* שומר על כפתורים קריאים */
+        height: 36px;
 
-        padding: 6px 14px;
-        font-size: 0.82rem;
+        padding: 8px 14px;
+        font-size: 0.85rem;
         white-space: nowrap;
+    }
+
+    /* =========================
+       USER / SIGNUP – BOTTOM
+    ========================= */
+    .conet-user {
+        grid-row: 3 / 4;
+        justify-self: center;
+        gap: 10px;
     }
 
     /* =========================
@@ -100,20 +90,21 @@
 ========================= */
 @media (max-width: 480px) {
     body {
-        padding-top: 92px;
+        padding-top: 132px;
     }
 
     .conet-logo img {
-        height: 48px;
+        height: 50px;
     }
 
     .conet-nav-links a {
-        font-size: 0.78rem;
-        padding: 6px 12px;
+        min-width: 130px;
+        font-size: 0.8rem;
+        padding: 7px 12px;
     }
 
     .conet-user button {
-        font-size: 0.78rem;
-        padding: 6px 12px;
+        font-size: 0.8rem;
+        padding: 7px 14px;
     }
 }
