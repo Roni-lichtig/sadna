@@ -6,7 +6,7 @@
 @media (max-width: 768px) {
 
   :root {
-    --mobile-nav-h: 176px; /* הוגדל עוד טיפה */
+    --mobile-nav-h: 176px;
   }
 
   /* ===== GLOBAL OFFSET FOR FIXED NAV ===== */
@@ -26,51 +26,34 @@
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     grid-template-rows: auto auto !important;
-    row-gap: 12px !important;
+    row-gap: 10px !important;
 
     align-items: center !important;
   }
 
   /* ===== TOP ROW (RTL) ===== */
   html[dir="rtl"] .conet-logo {
-    grid-column: 1 / 2 !important;      /* RIGHT */
+    grid-column: 1 / 2 !important;
     grid-row: 1 / 2 !important;
     justify-self: start !important;
-    height: auto !important;
   }
 
   html[dir="rtl"] .conet-user {
-    grid-column: 2 / 3 !important;      /* LEFT */
+    grid-column: 2 / 3 !important;
     grid-row: 1 / 2 !important;
     justify-self: end !important;
-    height: auto !important;
 
     display: flex !important;
     align-items: center !important;
     white-space: nowrap !important;
   }
 
-  /* LTR safety */
-  html[dir="ltr"] .conet-logo {
-    grid-column: 2 / 3 !important;
-    justify-self: end !important;
-  }
-
-  html[dir="ltr"] .conet-user {
-    grid-column: 1 / 2 !important;
-    justify-self: start !important;
-    display: flex !important;
-    align-items: center !important;
-    white-space: nowrap !important;
-  }
-
-  /* ===== LOGO – bigger & cleaner ===== */
+  /* ===== LOGO ===== */
   .conet-logo img {
     height: 64px !important;
-    width: auto !important;
   }
 
-  /* ===== USER AREA – cleaner ===== */
+  /* ===== USER ===== */
   .conet-user button,
   .conet-user .conet-logout-btn {
     font-size: 0.78rem !important;
@@ -78,7 +61,7 @@
     line-height: 1 !important;
   }
 
-  /* ===== NAV BUTTONS (2 rows) ===== */
+  /* ===== NAV BUTTONS ===== */
   .conet-nav-links {
     grid-column: 1 / 3 !important;
     grid-row: 2 / 3 !important;
@@ -87,20 +70,16 @@
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 8px !important;
 
-    /* 🔒 NEW – stabilize grid height */
-    grid-auto-rows: 36px !important;
-    align-content: start !important;
+    /* ✅ זה הפיקס האמיתי */
+    align-content: center !important;
 
     width: 100% !important;
     max-width: 360px !important;
     margin: 0 auto !important;
-    height: auto !important;
   }
 
   .conet-nav-links a {
     width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
 
     height: 32px !important;
     padding: 6px 8px !important;
@@ -110,25 +89,18 @@
     line-height: 1 !important;
   }
 
-  /* ⭐ Center last button if alone (odd count, e.g. login page) */
+  /* ⭐ כפתור אחרון בודד – ממורכז, בלי לשנות גובה */
   .conet-nav-links a:nth-child(odd):last-child {
     grid-column: 1 / -1 !important;
     justify-self: center !important;
     max-width: 180px !important;
   }
 
-  /* ===== AUTH PAGES FIX (LOGIN + SIGNUP) ===== */
+  /* ===== AUTH FIX ===== */
   .auth-wrapper {
     min-height: auto !important;
     padding-top: 16px !important;
     padding-bottom: 32px !important;
-  }
-
-  /* Kill desktop constraints */
-  .conet-logo,
-  .conet-nav-links,
-  .conet-user {
-    height: auto !important;
   }
 }
 
@@ -153,7 +125,6 @@
 
   .conet-nav-links {
     max-width: 320px !important;
-    gap: 8px !important;
   }
 
   .conet-nav-links a {
