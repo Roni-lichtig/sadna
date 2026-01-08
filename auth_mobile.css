@@ -1,18 +1,23 @@
 /* =================================================
-   FINAL MOBILE NAV – DEFINITIVE OVERRIDE
+   MOBILE NAV – FINAL AGREED VERSION
+   Logo right | Login left | Nav buttons below (2 rows)
 ================================================= */
 
 @media (max-width: 768px) {
 
-    /* BODY OFFSET */
+    /* =========================
+       BODY OFFSET – matches fixed banner
+    ========================= */
     body {
-        padding-top: 156px;
+        padding-top: 148px;
     }
 
-    /* NAVBAR */
+    /* =========================
+       NAVBAR
+    ========================= */
     .conet-navbar {
-        height: 156px !important;
-        padding: 10px 0 !important;
+        height: 148px !important;
+        padding: 8px 0 !important;
     }
 
     .conet-navbar-inner {
@@ -20,28 +25,47 @@
         padding: 0 16px !important;
 
         display: grid !important;
-        grid-template-columns: 1fr !important;
-        grid-template-rows: auto auto auto !important;
-        row-gap: 10px !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto auto !important;
+        row-gap: 12px !important;
 
         align-items: center !important;
-        justify-items: center !important;
     }
 
-    /* LOGO */
+    /* =========================
+       TOP ROW
+       Logo – right | Login – left
+    ========================= */
     .conet-logo {
+        grid-column: 2 / 3 !important;
         grid-row: 1 / 2 !important;
-        justify-self: center !important;
+        justify-self: end !important;
         height: auto !important;
     }
 
     .conet-logo img {
-        height: 52px !important;
+        height: 48px !important;
         width: auto !important;
     }
 
-    /* NAV LINKS – ALWAYS VISIBLE */
+    .conet-user {
+        grid-column: 1 / 2 !important;
+        grid-row: 1 / 2 !important;
+        justify-self: start !important;
+        height: auto !important;
+        gap: 6px !important;
+    }
+
+    .conet-user button {
+        font-size: 0.75rem !important;
+        padding: 6px 12px !important;
+    }
+
+    /* =========================
+       NAV LINKS – TWO ROWS
+    ========================= */
     .conet-nav-links {
+        grid-column: 1 / 3 !important;
         grid-row: 2 / 3 !important;
 
         display: grid !important;
@@ -50,43 +74,48 @@
 
         width: 100% !important;
         max-width: 360px !important;
+        margin: 0 auto !important;
+
         height: auto !important;
     }
 
     .conet-nav-links a {
-        width: 100% !important;      /* 🔥 מנצח width:180px */
+        width: 100% !important;
         min-width: 0 !important;
         max-width: none !important;
 
-        height: 36px !important;
-        padding: 8px 10px !important;
+        height: 34px !important;
+        padding: 6px 10px !important;
 
-        font-size: 0.85rem !important;
+        font-size: 0.82rem !important;
         white-space: nowrap !important;
     }
 
-    /* USER / SIGNUP */
+    /* =========================
+       HARD OVERRIDES – kill desktop constraints
+    ========================= */
+    .conet-logo,
+    .conet-nav-links,
     .conet-user {
-        grid-row: 3 / 4 !important;
-        justify-self: center !important;
-        gap: 8px !important;
         height: auto !important;
     }
 }
 
-/* VERY SMALL DEVICES */
+/* =========================
+   VERY SMALL DEVICES
+========================= */
 @media (max-width: 480px) {
 
     body {
-        padding-top: 148px;
+        padding-top: 140px;
     }
 
     .conet-navbar {
-        height: 148px !important;
+        height: 140px !important;
     }
 
     .conet-logo img {
-        height: 48px !important;
+        height: 44px !important;
     }
 
     .conet-nav-links {
@@ -95,7 +124,7 @@
     }
 
     .conet-nav-links a {
-        font-size: 0.8rem !important;
-        height: 34px !important;
+        font-size: 0.78rem !important;
+        height: 32px !important;
     }
 }
