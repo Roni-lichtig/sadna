@@ -1,13 +1,13 @@
 /* =================================================
-   FINAL MOBILE NAV (RTL-SAFE)
-   Logo RIGHT, Login/Signup LEFT, Nav buttons below (2 rows)
+   FINAL MOBILE NAV (RTL-SAFE) – UPDATED
+   Logo RIGHT, Signup/Login LEFT, Nav buttons inside (2 rows)
    Desktop untouched.
 ================================================= */
 
 @media (max-width: 768px) {
 
   :root {
-    --mobile-nav-h: 148px;
+    --mobile-nav-h: 168px; /* הוגדל כדי ששתי שורות לא יזלגו */
   }
 
   /* Prevent content being hidden under fixed header */
@@ -17,7 +17,7 @@
 
   .conet-navbar {
     height: var(--mobile-nav-h) !important;
-    padding: 8px 0 !important;
+    padding: 10px 0 12px !important;
   }
 
   /* 2 rows: top (logo + user), bottom (nav buttons) */
@@ -28,56 +28,60 @@
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     grid-template-rows: auto auto !important;
-    row-gap: 12px !important;
+    row-gap: 10px !important;
 
     align-items: center !important;
   }
 
-  /* --- RTL placement (your pages are dir="rtl") ---
-     In RTL, grid column 1 is the RIGHT side.
-     So: logo -> col 1 (right), user -> col 2 (left)
+  /* --- RTL placement (dir="rtl") ---
+     In RTL:
+     - grid column 1 is RIGHT
+     - grid column 2 is LEFT
+     We want: logo RIGHT, user LEFT
   */
   html[dir="rtl"] .conet-logo {
-    grid-column: 1 / 2 !important;
+    grid-column: 1 / 2 !important;      /* RIGHT */
     grid-row: 1 / 2 !important;
-    justify-self: start !important;   /* start in RTL = right */
+    justify-self: start !important;      /* start = right in RTL */
     height: auto !important;
   }
 
   html[dir="rtl"] .conet-user {
-    grid-column: 2 / 3 !important;
+    grid-column: 2 / 3 !important;       /* LEFT */
     grid-row: 1 / 2 !important;
-    justify-self: end !important;     /* end in RTL = left */
+    justify-self: end !important;         /* end = left in RTL */
     height: auto !important;
     gap: 6px !important;
   }
 
   /* Safety if you ever have LTR pages */
   html[dir="ltr"] .conet-logo {
-    grid-column: 2 / 3 !important;
+    grid-column: 2 / 3 !important;        /* RIGHT */
     grid-row: 1 / 2 !important;
     justify-self: end !important;
     height: auto !important;
   }
 
   html[dir="ltr"] .conet-user {
-    grid-column: 1 / 2 !important;
+    grid-column: 1 / 2 !important;        /* LEFT */
     grid-row: 1 / 2 !important;
     justify-self: start !important;
     height: auto !important;
     gap: 6px !important;
   }
 
+  /* Bigger logo on mobile */
   .conet-logo img {
-    height: 48px !important;
+    height: 58px !important; /* הוגדל */
     width: auto !important;
   }
 
-  /* Make user buttons smaller on mobile without changing desktop */
+  /* Make user button slightly smaller, keep style */
   .conet-user button,
   .conet-user .conet-logout-btn {
     font-size: 0.78rem !important;
     padding: 6px 12px !important;
+    line-height: 1 !important;
   }
 
   /* NAV buttons: always visible, 2 columns grid */
@@ -87,8 +91,7 @@
 
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-
+    gap: 8px !important;                 /* קצת פחות כדי שייכנס */
     width: 100% !important;
     max-width: 360px !important;
     margin: 0 auto !important;
@@ -96,16 +99,18 @@
     height: auto !important;
   }
 
+  /* Slightly tighter buttons so 2 rows fit inside the fixed height */
   .conet-nav-links a {
-    width: 100% !important;          /* kills desktop width:180px */
+    width: 100% !important;              /* kills desktop width:180px */
     min-width: 0 !important;
     max-width: none !important;
 
-    height: 34px !important;
-    padding: 6px 10px !important;
+    height: 32px !important;             /* ירד מעט */
+    padding: 6px 8px !important;         /* ירד מעט */
 
-    font-size: 0.82rem !important;
+    font-size: 0.80rem !important;       /* ירד מעט */
     white-space: nowrap !important;
+    line-height: 1 !important;
   }
 
   /* Kill desktop fixed heights that can clip */
@@ -118,11 +123,19 @@
 
 @media (max-width: 480px) {
   :root {
-    --mobile-nav-h: 140px;
+    --mobile-nav-h: 160px;
+  }
+
+  body {
+    padding-top: var(--mobile-nav-h) !important;
+  }
+
+  .conet-navbar {
+    height: var(--mobile-nav-h) !important;
   }
 
   .conet-logo img {
-    height: 44px !important;
+    height: 54px !important;
   }
 
   .conet-nav-links {
@@ -131,7 +144,8 @@
   }
 
   .conet-nav-links a {
-    height: 32px !important;
-    font-size: 0.78rem !important;
+    height: 30px !important;
+    font-size: 0.76rem !important;
+    padding: 5px 8px !important;
   }
 }
