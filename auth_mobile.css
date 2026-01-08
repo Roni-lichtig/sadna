@@ -44,7 +44,6 @@
     justify-self: end !important;
     height: auto !important;
 
-    /* 🔑 גורם ל"שלום אורח" להיות שורה אחת */
     display: flex !important;
     align-items: center !important;
     white-space: nowrap !important;
@@ -66,7 +65,7 @@
 
   /* ===== LOGO – bigger & cleaner ===== */
   .conet-logo img {
-    height: 64px !important;   /* הוגדל משמעותית */
+    height: 64px !important;
     width: auto !important;
   }
 
@@ -104,6 +103,15 @@
     font-size: 0.8rem !important;
     white-space: nowrap !important;
     line-height: 1 !important;
+  }
+
+  /* =================================================
+     ⭐ NEW: center last button if it’s alone (odd count)
+  ================================================= */
+  .conet-nav-links a:nth-child(odd):last-child {
+    grid-column: 1 / -1 !important;   /* תופס את כל השורה */
+    justify-self: center !important;
+    max-width: 180px !important;      /* נראה כמו כפתור רגיל */
   }
 
   /* Kill desktop constraints */
