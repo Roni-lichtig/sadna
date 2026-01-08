@@ -1,16 +1,14 @@
 /* =================================================
-   FINAL MOBILE NAV (RTL-SAFE) – UPDATED
-   Logo RIGHT, Signup/Login LEFT, Nav buttons inside (2 rows)
-   Desktop untouched.
+   FINAL MOBILE NAV (RTL-SAFE) – POLISHED
+   Logo RIGHT (bigger), User LEFT (single line), Nav buttons inside
 ================================================= */
 
 @media (max-width: 768px) {
 
   :root {
-    --mobile-nav-h: 168px; /* הוגדל כדי ששתי שורות לא יזלגו */
+    --mobile-nav-h: 176px; /* הוגדל עוד טיפה */
   }
 
-  /* Prevent content being hidden under fixed header */
   body {
     padding-top: var(--mobile-nav-h) !important;
   }
@@ -20,7 +18,6 @@
     padding: 10px 0 12px !important;
   }
 
-  /* 2 rows: top (logo + user), bottom (nav buttons) */
   .conet-navbar .conet-navbar-inner {
     height: 100% !important;
     padding: 0 16px !important;
@@ -28,55 +25,52 @@
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     grid-template-rows: auto auto !important;
-    row-gap: 10px !important;
+    row-gap: 12px !important;
 
     align-items: center !important;
   }
 
-  /* --- RTL placement (dir="rtl") ---
-     In RTL:
-     - grid column 1 is RIGHT
-     - grid column 2 is LEFT
-     We want: logo RIGHT, user LEFT
-  */
+  /* ===== TOP ROW (RTL) ===== */
   html[dir="rtl"] .conet-logo {
     grid-column: 1 / 2 !important;      /* RIGHT */
     grid-row: 1 / 2 !important;
-    justify-self: start !important;      /* start = right in RTL */
+    justify-self: start !important;
     height: auto !important;
   }
 
   html[dir="rtl"] .conet-user {
-    grid-column: 2 / 3 !important;       /* LEFT */
-    grid-row: 1 / 2 !important;
-    justify-self: end !important;         /* end = left in RTL */
-    height: auto !important;
-    gap: 6px !important;
-  }
-
-  /* Safety if you ever have LTR pages */
-  html[dir="ltr"] .conet-logo {
-    grid-column: 2 / 3 !important;        /* RIGHT */
+    grid-column: 2 / 3 !important;      /* LEFT */
     grid-row: 1 / 2 !important;
     justify-self: end !important;
     height: auto !important;
+
+    /* 🔑 גורם ל"שלום אורח" להיות שורה אחת */
+    display: flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+  }
+
+  /* LTR safety */
+  html[dir="ltr"] .conet-logo {
+    grid-column: 2 / 3 !important;
+    justify-self: end !important;
   }
 
   html[dir="ltr"] .conet-user {
-    grid-column: 1 / 2 !important;        /* LEFT */
-    grid-row: 1 / 2 !important;
+    grid-column: 1 / 2 !important;
     justify-self: start !important;
-    height: auto !important;
-    gap: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
   }
 
-  /* Bigger logo on mobile */
+  /* ===== LOGO – bigger & cleaner ===== */
   .conet-logo img {
-    height: 58px !important; /* הוגדל */
+    height: 64px !important;   /* הוגדל משמעותית */
     width: auto !important;
   }
 
-  /* Make user button slightly smaller, keep style */
+  /* ===== USER AREA – cleaner ===== */
   .conet-user button,
   .conet-user .conet-logout-btn {
     font-size: 0.78rem !important;
@@ -84,36 +78,35 @@
     line-height: 1 !important;
   }
 
-  /* NAV buttons: always visible, 2 columns grid */
+  /* ===== NAV BUTTONS (2 rows) ===== */
   .conet-nav-links {
     grid-column: 1 / 3 !important;
     grid-row: 2 / 3 !important;
 
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px !important;                 /* קצת פחות כדי שייכנס */
+    gap: 8px !important;
+
     width: 100% !important;
     max-width: 360px !important;
     margin: 0 auto !important;
-
     height: auto !important;
   }
 
-  /* Slightly tighter buttons so 2 rows fit inside the fixed height */
   .conet-nav-links a {
-    width: 100% !important;              /* kills desktop width:180px */
+    width: 100% !important;
     min-width: 0 !important;
     max-width: none !important;
 
-    height: 32px !important;             /* ירד מעט */
-    padding: 6px 8px !important;         /* ירד מעט */
+    height: 32px !important;
+    padding: 6px 8px !important;
 
-    font-size: 0.80rem !important;       /* ירד מעט */
+    font-size: 0.8rem !important;
     white-space: nowrap !important;
     line-height: 1 !important;
   }
 
-  /* Kill desktop fixed heights that can clip */
+  /* Kill desktop constraints */
   .conet-logo,
   .conet-nav-links,
   .conet-user {
@@ -121,9 +114,11 @@
   }
 }
 
+/* ===== VERY SMALL DEVICES ===== */
 @media (max-width: 480px) {
+
   :root {
-    --mobile-nav-h: 160px;
+    --mobile-nav-h: 168px;
   }
 
   body {
@@ -135,7 +130,7 @@
   }
 
   .conet-logo img {
-    height: 54px !important;
+    height: 58px !important;
   }
 
   .conet-nav-links {
