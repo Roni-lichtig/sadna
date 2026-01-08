@@ -87,6 +87,10 @@
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 8px !important;
 
+    /* 🔒 NEW – stabilize grid height */
+    grid-auto-rows: 36px !important;
+    align-content: start !important;
+
     width: 100% !important;
     max-width: 360px !important;
     margin: 0 auto !important;
@@ -113,10 +117,9 @@
     max-width: 180px !important;
   }
 
-  /* ===== AUTH PAGES FIX (LOGIN + SIGNUP) =====
-     Remove problematic 100vh on mobile */
+  /* ===== AUTH PAGES FIX (LOGIN + SIGNUP) ===== */
   .auth-wrapper {
-    min-height: auto !important;   /* 🔥 root cause fix */
+    min-height: auto !important;
     padding-top: 16px !important;
     padding-bottom: 32px !important;
   }
