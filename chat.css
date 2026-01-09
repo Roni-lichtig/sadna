@@ -14,7 +14,7 @@ body {
 ========================= */
 .chat-wrapper {
     max-width: 1100px;
-    height: calc(100vh - 120px); /* מתחת לבאנר */
+    height: calc(100vh - 120px);
     margin: 40px auto;
     background: #ffffff;
     border-radius: 24px;
@@ -64,12 +64,10 @@ body {
     gap: 8px;
 }
 
-/* שלי */
 .message-row.mine {
     justify-content: flex-end;
 }
 
-/* של אחרים */
 .message-row.others {
     justify-content: flex-start;
 }
@@ -91,7 +89,6 @@ body {
     flex-shrink: 0;
 }
 
-/* הסתרת avatar בהודעות שלי */
 .message-row.mine .user-avatar {
     display: none;
 }
@@ -109,14 +106,12 @@ body {
     word-wrap: break-word;
 }
 
-/* בועה – אחרים */
 .message-row.others .message-bubble {
     background: #f1f5ff;
     color: #1f2937;
     border-top-right-radius: 4px;
 }
 
-/* בועה – שלי */
 .message-row.mine .message-bubble {
     background: #2C80FF;
     color: #ffffff;
@@ -182,6 +177,7 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 #send-btn:hover {
@@ -189,9 +185,10 @@ body {
 }
 
 /* =========================
-   MOBILE FIXES
+   MOBILE FIXES – FINAL
 ========================= */
 @media (max-width: 768px) {
+
     .chat-wrapper {
         height: calc(100vh - 140px);
         margin: 12px;
@@ -208,11 +205,17 @@ body {
     }
 
     .input-area {
-        padding: 12px;
+        padding: 10px 12px;
         gap: 8px;
     }
 
+    #message-input {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
     #send-btn {
-        padding: 0 18px;
+        padding: 0 16px;
+        font-size: 0.85rem;
     }
 }
