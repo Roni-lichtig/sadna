@@ -1,247 +1,159 @@
 /* =================================================
-   HOLISTIC PROFILE – CoNet UNIFIED DESIGN
-   ⚠️ NO FUNCTIONALITY REMOVED
+   HOLISTIC PROFILE – CoNet CLEAN SPACING FIX
 ================================================= */
 
 :root {
     --primary-blue: #2C80FF;
     --primary-hover: #2563eb;
-    --bg-light: #f6f9ff;
-    --card-bg: #ffffff;
     --text-main: #1f2937;
     --text-secondary: #6b7280;
     --border-soft: #d1d9e6;
+    --danger-red: #dc3545;
 }
 
 /* =========================
-   PAGE BASE
+   BASE
 ========================= */
 body {
-    margin: 0;
-    background: linear-gradient(180deg, #eaf2ff 0%, #f6f9ff 100%);
-    color: var(--text-main);
-    direction: rtl;
     font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
 }
 
 /* =========================
-   MAIN CONTAINER
+   MAIN CONTAINER – SIDE SPACING
 ========================= */
 .main-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 32px 16px 80px;
-    min-height: calc(100vh - 80px);
+    padding: 32px 24px 80px; /* ⭐ רווחים בצדדים */
+    box-sizing: border-box;
 }
 
 /* =========================
-   HEADER
+   PROFILE HEADER
 ========================= */
 .profile-header {
     text-align: center;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
 }
 
 .profile-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
     margin-bottom: 6px;
 }
 
 .profile-header p {
-    font-size: 0.95rem;
     color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 /* =========================
-   TABS
+   TOP ACTION BUTTONS (NEW ORDER / ADD COMMUNITY)
 ========================= */
-.tabs-container {
+.tab-content > div:first-child {
     display: flex;
-    justify-content: center;
-    margin-bottom: 36px;
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
-.tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    padding: 6px;
+/* =========================
+   GRID CONTAINERS – SPACING FIX
+========================= */
+.grid-container {
+    padding: 0 8px;              /* ⭐ רווח פנימי */
+    gap: 20px;                   /* ⭐ ריווח בין כרטיסים */
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
     background: #ffffff;
-    border-radius: 999px;
+    border-radius: 20px;
+    padding: 18px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border: 1px solid transparent;
 }
 
-.tab-btn {
-    border: none;
-    background: transparent;
-    padding: 10px 20px;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.15s ease;
+.card:hover {
+    border-color: var(--primary-blue);
 }
 
-.tab-btn:hover {
-    background: rgba(44,128,255,0.08);
+/* =========================
+   CARD CONTENT
+========================= */
+.card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
     color: var(--primary-blue);
 }
 
-.tab-btn.active {
+.card-info {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+/* =========================
+   CARD ACTIONS
+========================= */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+.btn-primary,
+.auth-btn {
     background: var(--primary-blue);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover,
+.auth-btn:hover {
+    background: var(--primary-hover);
+}
+
+/* =========================
+   DANGER BUTTON – CANCEL
+========================= */
+.btn-danger {
+    background: #ffffff;
+    border: 1.5px solid var(--danger-red);
+    color: var(--danger-red);
+    border-radius: 999px;
+    padding: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background: var(--danger-red);
     color: #ffffff;
 }
 
 /* =========================
-   TAB CONTENT
+   TABS – CLEAN
 ========================= */
-.tab-content {
-    display: none;
+.tabs {
+    padding: 6px;
+    gap: 6px;
 }
 
-.active-content {
-    display: block;
-}
-
-/* =========================
-   GRID / CARDS
-========================= */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
-}
-
-.card {
-    background: var(--card-bg);
-    border-radius: 22px;
-    padding: 20px;
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.06),
-        0 30px 60px rgba(79,163,247,0.12);
-}
-
-.card h2,
-.card h3 {
-    margin-top: 0;
-    color: var(--primary-blue);
-}
-
-/* =========================
-   ACTION BUTTONS
-========================= */
-.auth-btn,
-.btn-primary {
-    background: var(--primary-blue);
-    color: white;
-    border: none;
-    border-radius: 999px;
-    padding: 12px 26px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.auth-btn:hover,
-.btn-primary:hover {
-    background: var(--primary-hover);
-}
-
-.btn-secondary {
-    background: white;
-    border: 1.5px solid var(--border-soft);
-    border-radius: 999px;
+.tab-btn {
     padding: 10px 22px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.btn-danger {
-    background: white;
-    border: 1.5px solid #dc3545;
-    color: #dc3545;
+    font-size: 0.85rem;
     border-radius: 999px;
-    padding: 10px 22px;
-    cursor: pointer;
-}
-
-/* =========================
-   FLIGHT BOARD
-========================= */
-.flight-board-container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.flight-card {
-    background: #ffffff;
-    border-radius: 22px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    border-right: 6px solid var(--border-soft);
-}
-
-.flight-card.today {
-    border-right-color: #22c55e;
-}
-
-.flight-card.future {
-    border-right-color: #f59e0b;
-}
-
-/* =========================
-   PERSONAL DETAILS
-========================= */
-.details-card-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.details-card {
-    max-width: 500px;
-    width: 100%;
-}
-
-.detail-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border-soft);
-    font-size: 0.9rem;
-}
-
-/* =========================
-   MODALS
-========================= */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(3px);
-    z-index: 2000;
-}
-
-.modal-content {
-    background: #ffffff;
-    margin: 10% auto;
-    padding: 26px;
-    border-radius: 22px;
-    max-width: 420px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-}
-
-.modal-actions {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
 }
 
 /* =========================
@@ -249,21 +161,20 @@ body {
 ========================= */
 @media (max-width: 768px) {
 
-    .tabs {
-        border-radius: 22px;
-        justify-content: center;
-    }
-
-    .tab-btn {
-        font-size: 0.82rem;
-        padding: 8px 14px;
-    }
-
-    .profile-header h1 {
-        font-size: 1.6rem;
+    .main-container {
+        padding: 24px 14px 60px; /* ⭐ רווחים גם במובייל */
     }
 
     .grid-container {
-        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 14px;
+    }
+
+    .tab-content > div:first-child {
+        justify-content: center;
+    }
+
+    .card {
+        padding: 16px;
     }
 }
